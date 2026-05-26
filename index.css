@@ -207,7 +207,7 @@ button {
   position: fixed;
   inset: 0;
   z-index: 190;
-  background: var(--bg);
+  background: linear-gradient(180deg, #dce8f2 0%, var(--bg) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,22 +305,24 @@ button {
   user-select: none;
 }
 
-/* ---- Building cutout — CENTRE of hero, top-aligned, not touching content ---- */
+/* ---- Building cutout — aligned to the right, sitting on the ground ---- */
 .hero-building {
   position: absolute;
-  /* Top edge below the nav, bottom stops well above the content zone */
-  top: calc(var(--nav-h) + 10px);
-  bottom: 130px;
-  /* leave space for text content */
+  /* top is smaller to make it look bigger */
+  top: 20px;
+  /* bottom sits right on top of the stats bar */
+  bottom: 70px;
   /* Shift right so content can sit clearly on the left */
   left: 20%;
-  right: -5%;
+  right: 0;
+  /* glued to the right edge of the page */
   z-index: 20;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
   /* building sits on the "ground" */
-  justify-content: center;
+  justify-content: flex-end;
+  /* aligned to the right edge */
 }
 
 .hero-building img {
@@ -329,9 +331,14 @@ button {
   width: auto;
   height: 100%;
   object-fit: contain;
-  object-position: bottom center;
+  object-position: bottom right;
+  /* aligned to the bottom right */
   display: block;
-  filter: drop-shadow(0 24px 64px rgba(0, 0, 0, 0.14));
+  filter: drop-shadow(-10px 24px 64px rgba(0, 0, 0, 0.12));
+
+  /*  esto para moverla verticalmente: */
+  transform: translateY(70px);
+  /* Valor negativo para subirla, positivo para bajarla */
 }
 
 /* ---- Left-side content zone (clear of building) ---- */
@@ -581,7 +588,7 @@ button {
 #intro {
   padding: 7rem 5vw 0;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #e6ecf2 100%);
 }
 
 .intro-grid {
@@ -676,7 +683,7 @@ button {
 #rooms {
   padding: 7rem 5vw;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: linear-gradient(180deg, #e6ecf2 0%, var(--bg) 100%);
 }
 
 .rooms-header {
@@ -702,7 +709,7 @@ button {
 }
 
 .room-card:hover {
-  background: var(--bg-card-hover);
+  background: linear-gradient(180deg, var(--bg-card) 0%, #eef5fa 100%);
 }
 
 .room-card__img-wrap {
@@ -826,10 +833,15 @@ button {
 
 /* Featured card */
 .room-card--featured {
+  background: linear-gradient(180deg, var(--bg-card) 0%, #f0f6fa 100%);
   outline: 2px solid var(--text);
   outline-offset: -1px;
   position: relative;
   z-index: 2;
+}
+
+.room-card--featured:hover {
+  background: linear-gradient(180deg, #f7fafd 0%, #dce8f2 100%);
 }
 
 /* ROOMS EXTRAS */
@@ -892,7 +904,7 @@ button {
 #editorial-split {
   padding: 7rem 5vw;
   border-top: 1px solid var(--border);
-  background: var(--bg-alt);
+  background: linear-gradient(135deg, #dce8f2 0%, #e6ecf2 100%);
 }
 
 .split-grid {
@@ -962,7 +974,7 @@ button {
 #gallery {
   padding: 7rem 5vw 0;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: linear-gradient(180deg, #e6ecf2 0%, var(--bg) 100%);
 }
 
 .gallery-header {
@@ -1045,7 +1057,7 @@ button {
 #about {
   padding: 7rem 5vw;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: linear-gradient(180deg, var(--bg) 0%, #dce8f2 100%);
 }
 
 .about-grid {
@@ -1163,7 +1175,7 @@ button {
 #contact {
   padding: 7rem 5vw;
   border-top: 1px solid var(--border);
-  background: var(--bg);
+  background: linear-gradient(180deg, #dce8f2 0%, var(--bg) 100%);
 }
 
 .contact-grid {
@@ -1282,8 +1294,8 @@ button {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--text);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 4px rgba(220, 232, 242, 0.5);
 }
 
 .form-group textarea {
@@ -1457,8 +1469,11 @@ button {
 
   /* Hero building size on tablet */
   .hero-building {
+    left: auto;
+    right: 0;
     width: clamp(400px, 90vw, 800px);
     bottom: 70px;
+    top: 40px;
   }
 }
 
@@ -1496,6 +1511,11 @@ button {
     top: calc(var(--nav-h) + 5px);
     bottom: 48%;
     /* leave bottom half for content */
+    justify-content: center;
+  }
+
+  .hero-building img {
+    object-position: bottom center;
   }
 
   /* Content zone full-width, lower half */
