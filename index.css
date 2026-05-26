@@ -1161,52 +1161,323 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
 
-/* ===== RESPONSIVE ===== */
+/* =============================================
+   RESPONSIVE — Tablet (≤1024px)
+   ============================================= */
 @media (max-width: 1024px) {
-  .intro-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .split-grid { grid-template-columns: 1fr; gap: 4rem; }
+
+  /* Intro */
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .intro-body { max-width: 100%; }
+
+  /* Split */
+  .split-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
   .split-img-col { aspect-ratio: 16/9; }
-  .about-grid { grid-template-columns: 1fr; gap: 4rem; }
-  .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
-  .footer-bottom { grid-template-columns: 1fr 1fr; }
+  .split-body { max-width: 100%; }
+
+  /* About */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .contact-body { max-width: 100%; }
+
+  /* Footer */
+  .footer-bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
   .footer-right { text-align: left; }
+
+  /* Extras */
   .extras-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Gallery */
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-col--tall { display: flex; }
+
+  /* Rooms grid 2 col on tablet */
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
+/* =============================================
+   RESPONSIVE — Mobile (≤768px)
+   ============================================= */
 @media (max-width: 768px) {
-  :root { --nav-h: 64px; }
+  :root { --nav-h: 60px; }
 
-  .nav-links, .nav-cta { display: none; }
+  /* --- NAV --- */
+  .nav-links,
+  .nav-cta { display: none; }
   .nav-burger { display: flex; }
 
-  .rooms-grid { grid-template-columns: 1fr; }
+  /* --- HERO --- */
+  #hero { min-height: 100svh; }
+
+  .hero-content {
+    padding: calc(var(--nav-h) + 2rem) 5vw 1.5rem;
+    justify-content: flex-end;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.4rem, 10vw, 3.8rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 1rem 5vw;
+  }
+
+  .stat-item {
+    flex-basis: 50%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(3) {
+    border-right: 1px solid var(--border);
+    padding-right: 1.5rem;
+  }
+
+  .stat-item:nth-child(2),
+  .stat-item:nth-child(4) {
+    padding-left: 1.5rem;
+  }
+
+  .stat-num { font-size: 1.5rem; }
+  .stat-divider { display: none; }
+  .hero-scroll-hint { display: none; }
+  .hero-brand-text { font-size: 30vw; }
+
+  /* --- INTRO --- */
+  #intro {
+    padding: 5rem 5vw 0;
+  }
+
+  .intro-grid { gap: 2rem; margin-bottom: 3rem; }
+
+  .intro-headline {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+  }
+
+  .intro-body {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .intro-meta-grid { grid-template-columns: 1fr; }
+  .intro-meta-item:nth-child(odd) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .intro-meta-item:nth-child(even) { padding-left: 0; }
+
+  .intro-full-img {
+    height: 50vw;
+    min-height: 240px;
+  }
+
+  /* --- ROOMS --- */
+  #rooms { padding: 5rem 5vw; }
+
+  .rooms-header { margin-bottom: 2.5rem; }
+
+  .rooms-grid {
+    grid-template-columns: 1fr;
+    border-radius: var(--radius);
+  }
+
   .room-card--featured { outline: none; }
 
-  .gallery-masonry { grid-template-columns: 1fr; }
+  .room-card__img-wrap { aspect-ratio: 16/9; }
+
+  .room-card__body { padding: 1.25rem; }
+
+  .room-card__title { font-size: 1.25rem; }
+
+  .extras-grid { grid-template-columns: 1fr; gap: 0; }
+
+  /* --- EDITORIAL SPLIT --- */
+  #editorial-split { padding: 5rem 5vw; }
+
+  .split-grid { gap: 2.5rem; }
+
+  .split-img-col {
+    aspect-ratio: 4/3;
+    border-radius: var(--radius);
+  }
+
+  .split-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .split-body {
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
+
+  .split-list li { font-size: 0.85rem; padding: 0.75rem 0; }
+
+  /* --- GALLERY --- */
+  #gallery { padding: 5rem 5vw 0; }
+
+  .gallery-header { margin-bottom: 2.5rem; }
+
+  .gallery-masonry {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0;
+  }
+
   .gallery-col--tall { display: none; }
-  .gallery-item.g-tall { aspect-ratio: 4/3; }
+
+  .gallery-col { gap: 0.5rem; }
+
+  .gallery-item {
+    border-radius: var(--radius);
+    aspect-ratio: 1/1;
+  }
+
+  .gallery-item.g-tall { aspect-ratio: 1/1; }
+
+  .marquee-strip { margin: 0 -5vw; }
+
+  /* --- ABOUT --- */
+  #about { padding: 5rem 5vw; }
+
+  .about-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 2rem;
+  }
+
+  .about-img-stack { aspect-ratio: 16/9; }
+
+  .feature-row { padding: 1.25rem 0; }
+  .feature-title { font-size: 0.9rem; }
+  .feature-desc { font-size: 0.8rem; }
+
+  /* --- BIG TEXT --- */
+  #big-text {
+    height: 50vw;
+    min-height: 260px;
+  }
+
+  .big-text-line {
+    font-size: clamp(2.5rem, 9vw, 5rem);
+    padding: 0 5vw;
+  }
+
+  /* --- CONTACT --- */
+  #contact { padding: 5rem 5vw; }
+
+  .contact-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .contact-body {
+    font-size: 0.92rem;
+    margin-bottom: 2rem;
+  }
 
   .form-row { grid-template-columns: 1fr; }
 
-  .extras-grid { grid-template-columns: 1fr; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 1rem; /* prevents iOS zoom */
+  }
 
-  .intro-meta-grid { grid-template-columns: 1fr; }
-  .intro-meta-item:nth-child(odd) { border-right: none; padding-right: 0; }
-  .intro-meta-item:nth-child(even) { padding-left: 0; }
+  /* --- FOOTER --- */
+  .footer-giant { padding-top: 3rem; }
+  .footer-giant-text {
+    font-size: clamp(18vw, 22vw, 26vw);
+    -webkit-text-stroke-width: 1px;
+  }
 
-  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
-  .stat-divider { display: none; }
-  .stat-item { flex-basis: calc(50% - 1rem); }
+  .footer-bottom {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 5vw;
+  }
 
-  .hero-scroll-hint { display: none; }
-
-  .footer-bottom { grid-template-columns: 1fr; }
   .footer-right { text-align: left; }
+
+  .footer-center {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 
-@media (max-width: 480px) {
-  #intro, #rooms, #editorial-split, #gallery, #about, #contact {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+/* =============================================
+   RESPONSIVE — Small Mobile (≤420px)
+   ============================================= */
+@media (max-width: 420px) {
+  .hero-headline { font-size: clamp(2rem, 11vw, 2.8rem); }
+
+  .mobile-link { font-size: 2rem; }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
   }
+
+  .btn { padding: 0.8rem 1.5rem; font-size: 0.78rem; }
+
+  .room-card__meta { gap: 0.35rem; }
+  .room-meta-item { font-size: 0.65rem; padding: 0.25rem 0.5rem; }
+
+  .gallery-masonry { grid-template-columns: 1fr; }
+  .gallery-item { aspect-ratio: 4/3; }
+
+  .big-text-line { font-size: clamp(2rem, 10vw, 3.5rem); }
+
+  .footer-center { flex-direction: column; gap: 0.5rem; }
+}
+
+/* =============================================
+   TOUCH / HOVER SAFE
+   ============================================= */
+@media (hover: none) {
+  .room-card:hover { background: var(--bg-card); }
+  .room-card:hover .room-card__img { transform: none; }
+  .gallery-item:hover img { transform: none; }
+  .split-img-col:hover .split-img { transform: none; }
+  .btn--primary:hover { transform: none; box-shadow: none; }
+  .btn--ghost:hover { transform: none; }
+  .nav-cta:hover { transform: none; }
 }
