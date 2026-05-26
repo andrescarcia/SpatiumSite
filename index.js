@@ -31,19 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }));
 
-  /* ---- HERO IMAGE LOAD ---- */
-  const heroImg = document.getElementById('hero-img');
-  if (heroImg) {
-    if (heroImg.complete) heroImg.classList.add('loaded');
-    else heroImg.addEventListener('load', () => heroImg.classList.add('loaded'));
-  }
-
-  /* ---- PARALLAX HERO BRAND (subtle) ---- */
+  /* ---- PARALLAX HERO BRAND + BUILDING (subtle depth) ---- */
   const heroBrand = document.getElementById('hero-brand');
-  if (heroBrand) {
+  const heroBuildingWrap = document.getElementById('hero-building-wrap');
+
+  if (heroBrand || heroBuildingWrap) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
-      heroBrand.style.transform = `translateY(${scrolled * 0.25}px)`;
+      if (scrolled <= window.innerHeight) {
+        if (heroBrand) {
+          heroBrand.style.transform = `translateY(${scrolled * 0.15}px)`;
+        }
+        if (heroBuildingWrap) {
+          heroBuildingWrap.style.transform = `translateY(${scrolled * 0.06}px)`;
+        }
+      }
     }, { passive: true });
   }
 
@@ -228,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.style.cssText = `
       position: fixed; z-index: 10000; pointer-events: none;
       width: 10px; height: 10px; border-radius: 50%;
-      background: #b8f000; mix-blend-mode: difference;
+      background: rgba(0,0,0,0.7); mix-blend-mode: multiply;
       transform: translate(-50%, -50%);
       transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, opacity 0.3s ease;
       opacity: 0;

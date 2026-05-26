@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0c0c0c" />
   <title>Spatium — Residência Universitária · Covilhã</title>
-  <meta name="description" content="Spatium Residence — Quartos modernos e estúdios para estudantes universitários em Covilhã, Portugal. Conforto, privacidade e comunidade a minutos da UBI." />
+  <meta name="description"
+    content="Spatium Residence — Quartos modernos e estúdios para estudantes universitários em Covilhã, Portugal. Conforto, privacidade e comunidade a minutos da UBI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
 
   <!-- NAV -->
@@ -39,59 +44,71 @@
     </ul>
   </div>
 
-  <!-- HERO -->
+  <!-- HERO — Layered Effect -->
   <section id="hero">
-    <div class="hero-bg">
-      <img src="photos/fachada1.1.png" alt="Spatium Residence Fachada" class="hero-img" id="hero-img" />
-      <div class="hero-overlay"></div>
-    </div>
 
+    <!-- Layer 1: Giant brand text BEHIND the building -->
     <div class="hero-brand">
       <span class="hero-brand-text" id="hero-brand">spatium</span>
     </div>
 
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="tag-dot"></span>Residência Universitária · Covilhã
+    <!-- Layer 2: Building cutout — right side, in front of text -->
+    <div class="hero-building" id="hero-building-wrap">
+      <img src="photos/fachadaNoFondo.png" alt="Spatium Residence" id="hero-building-img" />
+    </div>
+
+    <!-- Layer 3: Bottom gradient fade -->
+    <div class="hero-bottom-fade"></div>
+
+    <!-- Layer 4a: Top corner labels -->
+    <div class="hero-top-info">
+      <div class="hero-top-label">
+
       </div>
-      <h1 class="hero-headline">
-        O teu espaço.<br />
-        A tua <em class="accent">liberdade</em>.
-      </h1>
-      <p class="hero-sub">Quartos e estúdios equipados, a minutos da UBI.</p>
-      <div class="hero-actions">
-        <a href="#rooms" class="btn btn--primary">Ver Quartos</a>
-        <a href="#contact" class="btn btn--ghost">Fala Connosco ↗</a>
+      <div class="hero-top-label" style="text-align:right;">
       </div>
     </div>
 
+    <!-- Layer 4b: Content zone — left side, clear of building -->
+    <div class="hero-content-zone">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>Residência Universitária · Covilhã
+        </div>
+        <h1 class="hero-headline">
+          O teu espaço.<br />
+          A tua liberdade.
+        </h1>
+        <p class="hero-sub">Quartos e estúdios equipados, a minutos da UBI.</p>
+        <div class="hero-actions">
+          <a href="#rooms" class="btn btn--primary">Ver Quartos</a>
+          <a href="#contact" class="btn btn--ghost">Fala Connosco ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layer 5: Stats bar — full width at absolute bottom -->
     <div class="hero-stats">
       <div class="stat-item">
         <span class="stat-num">3</span>
         <span class="stat-label">Tipologias</span>
       </div>
-      <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-num">2025</span>
-        <span class="stat-label">Ano de Inauguração</span>
+        <span class="stat-label">Inauguração</span>
       </div>
-      <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-num">UBI</span>
         <span class="stat-label">5 min a pé</span>
       </div>
-      <div class="stat-divider"></div>
       <div class="stat-item">
         <span class="stat-num">40m²</span>
         <span class="stat-label">Maior Estúdio</span>
       </div>
     </div>
 
-    <div class="hero-scroll-hint">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
   </section>
+
 
   <!-- INTRO EDITORIAL -->
   <section id="intro">
@@ -106,7 +123,9 @@
       </div>
       <div class="intro-right">
         <p class="intro-body">
-          A Spatium Residence nasceu da vontade de oferecer aos estudantes universitários um lar moderno, funcional e acolhedor. Cada espaço foi pensado ao detalhe — desde a ergonomia do quarto de trabalho até ao pátio privativo onde podes desligar.
+          A Spatium Residence nasceu da vontade de oferecer aos estudantes universitários um lar moderno, funcional e
+          acolhedor. Cada espaço foi pensado ao detalhe — desde a ergonomia do quarto de trabalho até ao pátio privativo
+          onde podes desligar.
         </p>
         <div class="intro-meta-grid">
           <div class="intro-meta-item">
@@ -158,7 +177,8 @@
             <span class="room-meta-item"><span class="meta-icon">🌿</span>Pátio</span>
           </div>
           <h3 class="room-card__title">Quarto Conforto</h3>
-          <p class="room-card__desc">Quarto totalmente mobilado com WC privado, pátio privativo e acesso às áreas comuns. Funcionalidade e conforto em cada detalhe.</p>
+          <p class="room-card__desc">Quarto totalmente mobilado com WC privado, pátio privativo e acesso às áreas
+            comuns. Funcionalidade e conforto em cada detalhe.</p>
           <div class="room-card__footer">
             <span class="room-card__price">Consultar preço</span>
             <a href="#contact" class="room-card__cta">Reservar ↗</a>
@@ -180,7 +200,8 @@
             <span class="room-meta-item"><span class="meta-icon">☀️</span>Vista jardim</span>
           </div>
           <h3 class="room-card__title">Quarto Deluxe</h3>
-          <p class="room-card__desc">Espaçoso e luminoso, com acabamentos premium, WC privado e uma zona de leitura. Mais espaço, mais luz, mais conforto.</p>
+          <p class="room-card__desc">Espaçoso e luminoso, com acabamentos premium, WC privado e uma zona de leitura.
+            Mais espaço, mais luz, mais conforto.</p>
           <div class="room-card__footer">
             <span class="room-card__price">Consultar preço</span>
             <a href="#contact" class="room-card__cta">Reservar ↗</a>
@@ -202,7 +223,8 @@
             <span class="room-meta-item"><span class="meta-icon">🌿</span>Pátio privado</span>
           </div>
           <h3 class="room-card__title">Estúdio Premium</h3>
-          <p class="room-card__desc">T0 totalmente autónomo com cozinha equipada, WC privado e pátio exterior. Independência total dentro da residência.</p>
+          <p class="room-card__desc">T0 totalmente autónomo com cozinha equipada, WC privado e pátio exterior.
+            Independência total dentro da residência.</p>
           <div class="room-card__footer">
             <span class="room-card__price">Consultar preço</span>
             <a href="#contact" class="room-card__cta">Reservar ↗</a>
@@ -239,7 +261,8 @@
           da <em class="accent">UBI</em>.
         </h2>
         <p class="split-body">
-          A Spatium Residence situa-se a menos de 5 minutos a pé da Universidade da Beira Interior, no coração de Covilhã. Um edifício moderno, requalificado para os mais altos padrões de conforto e sustentabilidade.
+          A Spatium Residence situa-se a menos de 5 minutos a pé da Universidade da Beira Interior, no coração de
+          Covilhã. Um edifício moderno, requalificado para os mais altos padrões de conforto e sustentabilidade.
         </p>
         <ul class="split-list">
           <li><span class="accent-text">01 —</span> A 5 min a pé da UBI</li>
@@ -404,7 +427,8 @@
           <em class="accent">espaço</em>.
         </h2>
         <p class="contact-body">
-          Preenche o formulário ou contacta-nos directamente. Responderemos o mais brevemente possível com toda a informação sobre disponibilidade e preços.
+          Preenche o formulário ou contacta-nos directamente. Responderemos o mais brevemente possível com toda a
+          informação sobre disponibilidade e preços.
         </p>
         <div class="contact-info">
           <div class="contact-info-item">
@@ -480,4 +504,5 @@
 
   <script src="index.js"></script>
 </body>
+
 </html>
