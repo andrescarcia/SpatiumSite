@@ -32,21 +32,36 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 
   /* ---- PARALLAX HERO BRAND + BUILDING (subtle depth) ---- */
-  const heroBrand = document.getElementById('hero-brand');
+  const heroBrandContainer = document.querySelector('.hero-brand');
+  const heroBrandSpan = document.getElementById('hero-brand');
   const heroBuildingWrap = document.getElementById('hero-building-wrap');
 
-  if (heroBrand || heroBuildingWrap) {
+  if (heroBrandContainer || heroBuildingWrap) {
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
       if (scrolled <= window.innerHeight) {
-        if (heroBrand) {
-          heroBrand.style.transform = `translateY(${scrolled * 0.15}px)`;
+        // Usamos el contenedor para el parallax, así no sobrescribimos tu transform en CSS
+        if (heroBrandContainer) {
+          heroBrandContainer.style.transform = `translateY(${scrolled * 0.15}px)`;
         }
         if (heroBuildingWrap) {
           heroBuildingWrap.style.transform = `translateY(${scrolled * 0.06}px)`;
         }
       }
     }, { passive: true });
+  }
+
+  /* ---- ANIMACIÓN DE ESCRITURA (GSAP) ---- */
+  if (typeof gsap !== 'undefined' && heroBrandSpan) {
+    gsap.registerPlugin(TextPlugin);
+    const originalText = "spatium";
+    heroBrandSpan.textContent = ""; // Empezar vacío
+    gsap.to(heroBrandSpan, {
+      duration: 1.5,
+      text: originalText,
+      ease: "none",
+      delay: 0.2
+    });
   }
 
   /* ---- SCROLL REVEAL ---- */

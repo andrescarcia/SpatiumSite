@@ -303,42 +303,45 @@ button {
   line-height: 1;
   white-space: nowrap;
   user-select: none;
+
+  /* Esto para mover el texto gigante arriba o abajo: */
+  transform: translateY(-80px);
+  /* Valor negativo (ej. -50px) para subirlo, positivo (ej. 50px) para bajarlo */
 }
 
 /* ---- Building cutout — aligned to the right, sitting on the ground ---- */
 .hero-building {
   position: absolute;
-  /* top is smaller to make it look bigger */
+  /* AJUSTAR ALTURA: Aumenta este valor (ej. 150px o 250px) para que el edificio sea más bajito */
   top: 20px;
-  /* bottom sits right on top of the stats bar */
   bottom: 70px;
-  /* Shift right so content can sit clearly on the left */
-  left: 20%;
   right: 0;
-  /* glued to the right edge of the page */
+  
+  /* AJUSTAR ANCHO: Reduce este valor (ej. 60vw o 50vw) para que el edificio sea más estrecho */
+  width: 80vw;
+  
   z-index: 20;
   pointer-events: none;
   display: flex;
   align-items: flex-end;
-  /* building sits on the "ground" */
   justify-content: flex-end;
-  /* aligned to the right edge */
 }
 
 .hero-building img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
+  width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: bottom right;
-  /* aligned to the bottom right */
   display: block;
   filter: drop-shadow(-10px 24px 64px rgba(0, 0, 0, 0.12));
-
-  /*  esto para moverla verticalmente: */
   transform: translateY(70px);
-  /* Valor negativo para subirla, positivo para bajarla */
+}
+
+@media (min-width: 1400px) {
+  .hero-building {
+    /* AJUSTAR ANCHO EN PANTALLAS GRANDES: Reduce esto (ej. 45vw) para que en monitores grandes no tape el texto */
+    width: 55vw; 
+  }
 }
 
 /* ---- Left-side content zone (clear of building) ---- */
