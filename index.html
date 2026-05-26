@@ -54,7 +54,10 @@
 
     <!-- Layer 2: Building cutout — right side, in front of text -->
     <div class="hero-building" id="hero-building-wrap">
-      <img src="photos/fachadaNoFondo.png" alt="Spatium Residence" id="hero-building-img" />
+      <picture>
+        <source media="(max-width: 768px)" srcset="photos/fachadaMobile.png" />
+        <img src="photos/fachadaNoFondo.png" alt="Spatium Residence" id="hero-building-img" />
+      </picture>
     </div>
 
     <!-- Layer 3: Bottom gradient fade -->

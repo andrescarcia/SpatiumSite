@@ -1500,29 +1500,51 @@ button {
     min-height: 100svh;
   }
 
-  .hero-brand-text {
-    font-size: 36vw;
+  .hero-brand {
+    top: 12vh;
+    bottom: auto;
   }
 
-  /* Building full-width, upper half of screen */
+  .hero-brand-text {
+    font-size: 22vw;
+    /* Smaller so 'spatium' is fully visible on screen */
+  }
+
+  /* Building perfectly proportioned in the upper middle */
   .hero-building {
-    left: -5%;
-    right: -5%;
-    top: calc(var(--nav-h) + 5px);
-    bottom: 48%;
-    /* leave bottom half for content */
+    left: -2vw;
+    right: -2vw;
+    top: calc(var(--nav-h) + 15px);
+    bottom: auto;
+    /* Remove bottom stretching */
+    height: 40vh;
+    /* Constrain height to keep it proportional and not 'too tall' */
     justify-content: center;
   }
 
   .hero-building img {
     object-position: bottom center;
+    transform: none;
+    /* override desktop translateY(70px) shift on mobile */
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.12));
+    /* Softer centered shadow */
+    /* Fade the image on its top, bottom, left, and right edges */
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%),
+      linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-composite: intersect;
   }
 
   /* Content zone full-width, lower half */
   .hero-content-zone {
     width: 100%;
-    bottom: 75px;
-    padding: 0 5vw 1.5rem;
+    bottom: 120px;
+    /* raise above the 2-row stats bar */
+    padding: 0 5vw 1rem;
   }
 
   .hero-top-info {
@@ -1530,20 +1552,29 @@ button {
   }
 
   .hero-headline {
-    font-size: clamp(2rem, 9vw, 3.2rem);
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    /* slightly smaller for mobile screens */
+    margin-bottom: 0.5rem;
   }
 
   .hero-sub {
-    font-size: 0.92rem;
-    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .hero-actions {
-    flex-direction: column;
+    flex-direction: row;
+    /* display buttons side-by-side to save vertical space */
+    gap: 0.5rem;
   }
 
   .hero-actions .btn {
-    width: 100%;
+    flex: 1;
+    /* share width equally */
+    padding: 0.7rem 1rem;
+    /* smaller padding to prevent wrapping issues */
+    font-size: 0.72rem;
+    white-space: nowrap;
     border-radius: var(--radius);
   }
 
@@ -1712,6 +1743,8 @@ button {
 
   .marquee-strip {
     margin: 0 -5vw;
+    margin-top: 8vh;
+    padding: 1vh 0;
   }
 
   /* ABOUT */
