@@ -51,71 +51,110 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  /* ---- ANIMACIÓN DE ESCRITURA (GSAP) ---- */
-  if (typeof gsap !== 'undefined' && heroBrandSpan) {
-    gsap.registerPlugin(TextPlugin);
-    const originalText = "spatium";
-    heroBrandSpan.textContent = ""; // Empezar vacío
-    gsap.to(heroBrandSpan, {
-      duration: 1.5,
-      text: originalText,
-      ease: "none",
-      delay: 0.2
-    });
-  }
+  /* ---- GSAP HERO & SCROLL ANIMATIONS ---- */
+  if (typeof gsap !== 'undefined') {
+    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-  /* ---- SCROLL REVEAL ---- */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
+    // 1. Hero text "spatium" character entrance
+    if (heroBrandSpan) {
+      const originalText = "spatium";
+      heroBrandSpan.innerHTML = "";
+      
+      const chars = originalText.split('').map(char => {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.display = 'inline-block';
+        heroBrandSpan.appendChild(span);
+        return span;
+      });
+
+      gsap.from(chars, {
+        x: -50,
+        opacity: 0,
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.1,
+        delay: 0.2
+      });
+    }
+
+    // 2. Hero Building Image Entrance
+    const heroBuildingImg = document.getElementById('hero-building-img');
+    if (heroBuildingImg) {
+      gsap.from(heroBuildingImg, {
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        delay: 0.5
+      });
+    }
+
+    // 3. Hero Content Entrance
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+      gsap.from(heroContent.children, {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "power2.out",
+        delay: 0.8
+      });
+    }
+
+    // 4. Scroll Reveals using ScrollTrigger
+    const sectionsToReveal = [
+      '#intro .intro-grid',
+      '#intro .intro-full-img',
+      '#rooms .rooms-header',
+      '#rooms .rooms-extras',
+      '#editorial-split .split-grid',
+      '#gallery .gallery-header',
+      '#about .about-grid',
+      '#contact .contact-grid'
+    ];
+
+    sectionsToReveal.forEach(sel => {
+      const el = document.querySelector(sel);
+      if (el) {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%"
+          },
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out"
+        });
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  revealEls.forEach(el => revealObserver.observe(el));
+    // Stagger lists
+    const staggerGroups = [
+      { sel: '.room-card', trigger: '.rooms-grid' },
+      { sel: '.feature-row', trigger: '.features-table' },
+      { sel: '.gallery-item', trigger: '.gallery-masonry' }
+    ];
 
-  /* ---- ADD REVEAL CLASSES PROGRAMMATICALLY ---- */
-  const sections = [
-    '#intro .intro-grid',
-    '#intro .intro-full-img',
-    '#rooms .rooms-header',
-    '#rooms .rooms-grid',
-    '#rooms .rooms-extras',
-    '#editorial-split .split-grid',
-    '#gallery .gallery-header',
-    '#gallery .gallery-masonry',
-    '#about .about-grid',
-    '#contact .contact-grid',
-  ];
-
-  sections.forEach(sel => {
-    const el = document.querySelector(sel);
-    if (el) el.classList.add('reveal');
-  });
-
-  // Stagger room cards
-  document.querySelectorAll('.room-card').forEach((card, i) => {
-    card.classList.add('reveal');
-    card.style.transitionDelay = `${i * 0.1}s`;
-  });
-
-  // Stagger feature rows
-  document.querySelectorAll('.feature-row').forEach((row, i) => {
-    row.classList.add('reveal');
-    row.style.transitionDelay = `${i * 0.06}s`;
-  });
-
-  // Stagger gallery items
-  document.querySelectorAll('.gallery-item').forEach((item, i) => {
-    item.classList.add('reveal');
-    item.style.transitionDelay = `${i * 0.08}s`;
-  });
-
-  // Re-run observer for dynamically added reveals
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    staggerGroups.forEach(group => {
+      const els = document.querySelectorAll(group.sel);
+      if (els.length) {
+        gsap.from(els, {
+          scrollTrigger: {
+            trigger: group.trigger,
+            start: "top 80%"
+          },
+          y: 40,
+          opacity: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power2.out"
+        });
+      }
+    });
+  }
 
   /* ---- MARQUEE (pause on hover) ---- */
   const marqueeTrack = document.getElementById('marquee-track');

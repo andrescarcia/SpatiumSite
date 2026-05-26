@@ -1397,17 +1397,6 @@ button {
   color: var(--accent);
 }
 
-/* ===== SCROLL REVEAL ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* =============================================
    RESPONSIVE — Tablet (≤1024px)
