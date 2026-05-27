@@ -5,6 +5,252 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---- LANGUAGE SWITCH ---- */
+  const langBtns = document.querySelectorAll('.lang-btn, .mobile-lang-btn');
+  const i18nElements = document.querySelectorAll('[data-i18n], [data-i18n-placeholder]');
+  
+  const translations = {
+    pt: {
+      'nav-rooms': 'Quartos',
+      'nav-about': 'Sobre',
+      'nav-gallery': 'Galeria',
+      'nav-contact': 'Contactos',
+      'nav-cta': 'Reservar',
+      'hero-tag': '<span class="tag-dot"></span>Residência Universitária · Covilhã',
+      'hero-head': 'O teu espaço.<br />A tua liberdade.',
+      'hero-sub': 'Quartos e estúdios equipados, a minutos da UBI.',
+      'hero-btn1': 'Ver Quartos',
+      'hero-btn2': 'Fala Connosco ↗',
+      'stat-typ': 'Tipologias',
+      'stat-inaug': 'Inauguração',
+      'stat-dist': '5 min a pé',
+      'stat-size': 'Maior Estúdio',
+      'intro-over': '— Sobre nós',
+      'intro-head': 'Qualidade.<br /><em class="accent">Conforto.</em><br />Comunidade.',
+      'intro-body': 'A Spatium Residence nasceu da vontade de oferecer aos estudantes universitários um lar moderno, funcional e acolhedor. Cada espaço foi pensado ao detalhe — desde a ergonomia do quarto de trabalho até ao pátio privativo onde podes desligar.',
+      'meta-loc': 'Localização',
+      'meta-loc-val': 'Covilhã, Portugal',
+      'meta-type': 'Tipo',
+      'meta-type-val': 'Residência Universitária',
+      'meta-avail': 'Disponibilidade',
+      'meta-rooms': 'Quartos',
+      'meta-rooms-val': 'Conforto · Deluxe · Estúdio',
+      'intro-caption': 'Jardim privativo da residência',
+      'rooms-over': '— Os nossos espaços',
+      'rooms-head': 'Encontra o teu<br /><em class="accent">quarto ideal</em>',
+      'room1-badge': 'Conforto',
+      'room1-title': 'Quarto Conforto',
+      'room1-desc': 'Quarto totalmente mobilado com WC privado, pátio privativo e acesso às áreas comuns. Funcionalidade e conforto em cada detalhe.',
+      'room1-bed': '<span class="meta-icon">🛏</span>Cama 2x1m',
+      'room1-wc': '<span class="meta-icon">🚿</span>WC Privado',
+      'room1-patio': '<span class="meta-icon">🌿</span>Pátio',
+      'room-price': 'Consultar preço',
+      'room-book': 'Reservar ↗',
+      'room2-badge': 'Deluxe',
+      'room2-title': 'Quarto Deluxe',
+      'room2-desc': 'Espaçoso e luminoso, com acabamentos premium, WC privado e uma zona de leitura. Mais espaço, mais luz, mais conforto.',
+      'room2-bed': '<span class="meta-icon">🛏</span>Cama King',
+      'room2-view': '<span class="meta-icon">☀️</span>Vista jardim',
+      'room3-badge': 'Estúdio',
+      'room3-title': 'Estúdio Premium',
+      'room3-desc': 'T0 totalmente autónomo com cozinha equipada, WC privado e pátio exterior. Independência total dentro da residência.',
+      'room3-kitchen': '<span class="meta-icon">🍳</span>Cozinha',
+      'room3-patio': '<span class="meta-icon">🌿</span>Pátio privado',
+      'extras-title': 'Incluído em todos os quartos',
+      'extra1': '<span class="extra-mark">↳</span>WIFI de alta velocidade',
+      'extra2': '<span class="extra-mark">↳</span>Limpeza semanal das zonas comuns',
+      'extra3': '<span class="extra-mark">↳</span>Segurança 24h com código pessoal',
+      'extra4': '<span class="extra-mark">↳</span>Despesas fixas (água, luz, gás)',
+      'extra5': '<span class="extra-mark">↳</span>Cozinha partilhada equipada',
+      'extra6': '<span class="extra-mark">↳</span>Sala de estudo e convívio',
+      'split-over': '— A residência',
+      'split-head': 'Viver perto<br />da <em class="accent">UBI</em>.',
+      'split-body': 'A Spatium Residence situa-se a menos de 5 minutos a pé da Universidade da Beira Interior, no coração de Covilhã. Um edifício moderno, requalificado para os mais altos padrões de conforto e sustentabilidade.',
+      'split-l1': '<span class="accent-text">01 —</span> A 5 min a pé da UBI',
+      'split-l2': '<span class="accent-text">02 —</span> Edifício totalmente requalificado',
+      'split-l3': '<span class="accent-text">03 —</span> Comunidade de estudantes activos',
+      'split-l4': '<span class="accent-text">04 —</span> Pátios e jardins privativos',
+      'split-btn': 'Saber mais ↗',
+      'gallery-over': '— A nossa galeria',
+      'gallery-head': 'Cada detalhe<br />foi <em class="accent">pensado</em>',
+      'mq-res': 'Residência Universitária',
+      'mq-c1': 'Quarto Conforto',
+      'mq-c2': 'Quarto Deluxe',
+      'mq-c3': 'Estúdio Premium',
+      'mq-loc': 'Covilhã, Portugal',
+      'mq-ubi': 'UBI · 5 minutos',
+      'about-over': '— Porquê a Spatium',
+      'about-head': 'Inovação e<br />conforto,<br /><em class="accent">desenhado para ti</em>.',
+      'f1-t': 'Limpeza Diária',
+      'f1-d': 'As zonas comuns são limpas e higienizadas diariamente.',
+      'f2-t': 'Segurança 24h',
+      'f2-d': 'Código pessoal e câmaras nas áreas comuns para a tua tranquilidade.',
+      'f3-t': 'WIFI de Alta Velocidade',
+      'f3-d': 'Internet rápida e fiável em toda a residência.',
+      'f4-t': 'Despesas Fixas',
+      'f4-d': 'Água, luz e gás incluídos sem surpresas no final do mês.',
+      'f5-t': 'Cozinha Equipada',
+      'f5-d': 'Estúdios com frigorífico, fogão, forno e microondas.',
+      'f6-t': 'Camas de Casal',
+      'f6-d': 'Todos os quartos estão equipados com camas de casal confortáveis.',
+      'big1': 'Vive perto.',
+      'big2': 'Estuda melhor.',
+      'contact-over': '— Contacto',
+      'contact-head': 'Reserva o teu<br /><em class="accent">espaço</em>.',
+      'contact-body': 'Preenche o formulário ou contacta-nos directamente. Responderemos o mais brevemente possível com toda a informação sobre disponibilidade e preços.',
+      'lbl-name': 'Nome *',
+      'lbl-email': 'Email *',
+      'lbl-room': 'Tipologia de interesse',
+      'opt-sel': 'Selecciona uma opção',
+      'opt-c': 'Quarto Conforto',
+      'opt-d': 'Quarto Deluxe',
+      'opt-s': 'Estúdio Premium',
+      'lbl-msg': 'Mensagem',
+      'form-submit-txt': 'Enviar Mensagem ↗',
+      'form-success': '✓ Mensagem enviada! Entraremos em contacto em breve.',
+      'ph-name': 'O teu nome',
+      'ph-email': 'email@exemplo.pt',
+      'ph-msg': 'Deixa a tua mensagem...',
+      'footer-rights': '© 2025 Spatium Residence · Covilhã, Portugal',
+      'footer-tag': 'Residência Universitária · Qualidade · Conforto · Comunidade'
+    },
+    en: {
+      'nav-rooms': 'Rooms',
+      'nav-about': 'About',
+      'nav-gallery': 'Gallery',
+      'nav-contact': 'Contact',
+      'nav-cta': 'Book Now',
+      'hero-tag': '<span class="tag-dot"></span>University Residence · Covilhã',
+      'hero-head': 'Your space.<br />Your freedom.',
+      'hero-sub': 'Fully equipped rooms and studios, minutes from UBI.',
+      'hero-btn1': 'View Rooms',
+      'hero-btn2': 'Talk to Us ↗',
+      'stat-typ': 'Room Types',
+      'stat-inaug': 'Opening',
+      'stat-dist': '5 min walk',
+      'stat-size': 'Largest Studio',
+      'intro-over': '— About us',
+      'intro-head': 'Quality.<br /><em class="accent">Comfort.</em><br />Community.',
+      'intro-body': 'Spatium Residence was born from the desire to offer university students a modern, functional, and welcoming home. Every space was designed with detail in mind — from the ergonomics of the study room to the private courtyard where you can unplug.',
+      'meta-loc': 'Location',
+      'meta-loc-val': 'Covilhã, Portugal',
+      'meta-type': 'Type',
+      'meta-type-val': 'University Residence',
+      'meta-avail': 'Availability',
+      'meta-rooms': 'Rooms',
+      'meta-rooms-val': 'Comfort · Deluxe · Studio',
+      'intro-caption': 'Private residence garden',
+      'rooms-over': '— Our spaces',
+      'rooms-head': 'Find your<br /><em class="accent">ideal room</em>',
+      'room1-badge': 'Comfort',
+      'room1-title': 'Comfort Room',
+      'room1-desc': 'Fully furnished room with private bathroom, private patio, and access to common areas. Functionality and comfort in every detail.',
+      'room1-bed': '<span class="meta-icon">🛏</span>2x1m Bed',
+      'room1-wc': '<span class="meta-icon">🚿</span>Private Bath',
+      'room1-patio': '<span class="meta-icon">🌿</span>Patio',
+      'room-price': 'Check price',
+      'room-book': 'Book ↗',
+      'room2-badge': 'Deluxe',
+      'room2-title': 'Deluxe Room',
+      'room2-desc': 'Spacious and bright, with premium finishes, private bathroom, and a reading area. More space, more light, more comfort.',
+      'room2-bed': '<span class="meta-icon">🛏</span>King Bed',
+      'room2-view': '<span class="meta-icon">☀️</span>Garden view',
+      'room3-badge': 'Studio',
+      'room3-title': 'Premium Studio',
+      'room3-desc': 'Fully autonomous T0 with equipped kitchen, private bathroom, and outdoor patio. Total independence within the residence.',
+      'room3-kitchen': '<span class="meta-icon">🍳</span>Kitchen',
+      'room3-patio': '<span class="meta-icon">🌿</span>Private patio',
+      'extras-title': 'Included in all rooms',
+      'extra1': '<span class="extra-mark">↳</span>High-speed WIFI',
+      'extra2': '<span class="extra-mark">↳</span>Weekly cleaning of common areas',
+      'extra3': '<span class="extra-mark">↳</span>24h security with personal code',
+      'extra4': '<span class="extra-mark">↳</span>Fixed expenses (water, electricity, gas)',
+      'extra5': '<span class="extra-mark">↳</span>Fully equipped shared kitchen',
+      'extra6': '<span class="extra-mark">↳</span>Study and lounge room',
+      'split-over': '— The residence',
+      'split-head': 'Live close<br />to <em class="accent">UBI</em>.',
+      'split-body': 'Spatium Residence is located less than a 5-minute walk from the University of Beira Interior, in the heart of Covilhã. A modern building, renovated to the highest standards of comfort and sustainability.',
+      'split-l1': '<span class="accent-text">01 —</span> 5 min walk to UBI',
+      'split-l2': '<span class="accent-text">02 —</span> Fully renovated building',
+      'split-l3': '<span class="accent-text">03 —</span> Active student community',
+      'split-l4': '<span class="accent-text">04 —</span> Private patios and gardens',
+      'split-btn': 'Learn more ↗',
+      'gallery-over': '— Our gallery',
+      'gallery-head': 'Every detail<br />was <em class="accent">thought out</em>',
+      'mq-res': 'University Residence',
+      'mq-c1': 'Comfort Room',
+      'mq-c2': 'Deluxe Room',
+      'mq-c3': 'Premium Studio',
+      'mq-loc': 'Covilhã, Portugal',
+      'mq-ubi': 'UBI · 5 minutes',
+      'about-over': '— Why Spatium',
+      'about-head': 'Innovation and<br />comfort,<br /><em class="accent">designed for you</em>.',
+      'f1-t': 'Daily Cleaning',
+      'f1-d': 'Common areas are cleaned and sanitized daily.',
+      'f2-t': '24h Security',
+      'f2-d': 'Personal code and cameras in common areas for your peace of mind.',
+      'f3-t': 'High-Speed WIFI',
+      'f3-d': 'Fast and reliable internet throughout the residence.',
+      'f4-t': 'Fixed Expenses',
+      'f4-d': 'Water, electricity, and gas included with no surprises at the end of the month.',
+      'f5-t': 'Equipped Kitchen',
+      'f5-d': 'Studios with fridge, stove, oven, and microwave.',
+      'f6-t': 'Double Beds',
+      'f6-d': 'All rooms are equipped with comfortable double beds.',
+      'big1': 'Live close.',
+      'big2': 'Study better.',
+      'contact-over': '— Contact',
+      'contact-head': 'Book your<br /><em class="accent">space</em>.',
+      'contact-body': 'Fill out the form or contact us directly. We will respond as soon as possible with all information regarding availability and pricing.',
+      'lbl-name': 'Name *',
+      'lbl-email': 'Email *',
+      'lbl-room': 'Room type of interest',
+      'opt-sel': 'Select an option',
+      'opt-c': 'Comfort Room',
+      'opt-d': 'Deluxe Room',
+      'opt-s': 'Premium Studio',
+      'lbl-msg': 'Message',
+      'form-submit-txt': 'Send Message ↗',
+      'form-success': '✓ Message sent! We will contact you soon.',
+      'ph-name': 'Your name',
+      'ph-email': 'email@example.com',
+      'ph-msg': 'Leave your message...',
+      'footer-rights': '© 2025 Spatium Residence · Covilhã, Portugal',
+      'footer-tag': 'University Residence · Quality · Comfort · Community'
+    }
+  };
+
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lang = btn.getAttribute('data-lang');
+      
+      // Update active state
+      langBtns.forEach(b => {
+        if (b.getAttribute('data-lang') === lang) {
+          b.classList.add('active');
+        } else {
+          b.classList.remove('active');
+        }
+      });
+
+      // Update text and placeholders for i18n elements
+      if (translations[lang]) {
+        i18nElements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (key && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+          }
+
+          const placeholderKey = el.getAttribute('data-i18n-placeholder');
+          if (placeholderKey && translations[lang][placeholderKey]) {
+            el.setAttribute('placeholder', translations[lang][placeholderKey]);
+          }
+        });
+      }
+    });
+  });
+
   /* ---- NAV SCROLL ---- */
   const nav = document.getElementById('main-nav');
   const onScroll = () => {

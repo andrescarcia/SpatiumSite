@@ -160,6 +160,43 @@ button {
   width: 100%;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.lang-sep {
+  color: var(--border-mid);
+  font-weight: 300;
+}
+
+.lang-btn {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  padding: 0;
+}
+
+.lang-btn:hover {
+  color: var(--text);
+}
+
+.lang-btn.active {
+  color: var(--text);
+}
+
 .nav-cta {
   flex-shrink: 0;
   padding: 0.5rem 1.3rem;
@@ -253,6 +290,26 @@ button {
   margin-top: 0.5rem;
 }
 
+.mobile-lang-switch {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.mobile-lang-btn {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+}
+
+.mobile-lang-btn.active {
+  color: var(--text);
+}
+
 /* =============================================
    HERO — Layered Effect
    Layer order (bottom → top):
@@ -316,10 +373,10 @@ button {
   top: 20px;
   bottom: 70px;
   right: 0;
-  
+
   /* AJUSTAR ANCHO: Reduce este valor (ej. 60vw o 50vw) para que el edificio sea más estrecho */
   width: 80vw;
-  
+
   z-index: 20;
   pointer-events: none;
   display: flex;
@@ -340,7 +397,7 @@ button {
 @media (min-width: 1400px) {
   .hero-building {
     /* AJUSTAR ANCHO EN PANTALLAS GRANDES: Reduce esto (ej. 45vw) para que en monitores grandes no tape el texto */
-    width: 55vw; 
+    width: 55vw;
   }
 }
 
@@ -359,8 +416,6 @@ button {
   justify-content: flex-end;
 }
 
-/* hero-content is a plain div now */
-.hero-content {}
 
 /* ---- Bottom gradient ---- */
 .hero-bottom-fade {
