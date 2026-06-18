@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0c0c" />
+    <title>Quarto Conforto — Spatium Residence</title>
+    <meta name="description" content="Quarto Conforto da Spatium Residence: 15m², WC privado, mobilado e muita luz natural." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+
+    <nav id="main-nav">
+      <div class="nav-logo">Spatium</div>
+      <ul class="nav-links">
+        <li><a href="index.html#rooms" data-i18n="nav-rooms">Quartos</a></li>
+        <li><a href="index.html#about" data-i18n="nav-about">Sobre</a></li>
+        <li><a href="index.html#gallery" data-i18n="nav-gallery">Galeria</a></li>
+        <li><a href="index.html#contact" data-i18n="nav-contact">Contactos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="pt">PT</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="index.html?room=conforto#contact" class="nav-cta" data-i18n="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="room-page">
+      <section class="room-page-hero">
+        <div class="room-page-hero__content">
+          <p class="section-overline" data-i18n="rp-c-overline">— Quarto Conforto</p>
+          <h1 data-i18n="rp-c-title">Quarto<br /><em class="accent">Conforto</em></h1>
+          <p data-i18n="rp-c-desc">Quarto totalmente mobilado com WC privado, muita luz natural e acesso às áreas comuns. O espaço foi pensado para oferecer conforto funcional e um ambiente tranquilo para estudo.</p>
+          <div class="room-page-hero__actions">
+            <a href="index.html?room=conforto#contact" class="btn btn--primary" data-i18n="room-book">Reservar ↗</a>
+            <a href="index.html#rooms" class="btn btn--ghost" data-i18n="rp-btn-back">← Todos os quartos</a>
+          </div>
+        </div>
+        <div class="room-page-hero__image">
+          <div class="room-gallery" aria-label="Galeria Quarto Conforto">
+            <div class="room-gallery__track">
+              <figure class="room-gallery__slide">
+                <img src="photos/room1.png" alt="Quarto Conforto" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/Conforto.JPG" alt="Quarto Conforto interior" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/patioconforto.png" alt="Pátio Conforto" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/room3.png" alt="Quarto Conforto detalhe" />
+              </figure>
+            </div>
+            <button class="room-gallery__arrow room-gallery__arrow--prev" type="button" aria-label="Foto anterior">&#8249;</button>
+            <button class="room-gallery__arrow room-gallery__arrow--next" type="button" aria-label="Foto seguinte">&#8250;</button>
+            <div class="room-gallery__dots" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="room-page-details">
+        <div class="room-page-card">
+          <h3 data-i18n="rp-head-features">Características</h3>
+          <ul>
+            <li data-i18n="rp-c-feat1">Área — 15m²</li>
+            <li data-i18n="rp-feat-wc">WC privado</li>
+            <li data-i18n="rp-feat-furnished">Mobilado</li>
+            <li data-i18n="rp-feat-light">Muita luz natural</li>
+            <li data-i18n="rp-feat-patio">Pátio privativo</li>
+            <li data-i18n="rp-feat-common">Acesso às áreas comuns</li>
+          </ul>
+        </div>
+        <div class="room-page-card">
+          <h3 data-i18n="rp-head-furniture">Mobília</h3>
+          <ul>
+            <li data-i18n="rp-c-furn1">Cama 2×1 metros</li>
+            <li data-i18n="rp-furn-desk">Secretária</li>
+            <li data-i18n="rp-furn-chair">Cadeira</li>
+            <li data-i18n="rp-furn-wardrobe">Roupeiro</li>
+            <li data-i18n="rp-furn-pillow">Almofada</li>
+            <li data-i18n="rp-furn-bathcab">Móvel de casa de banho</li>
+            <li data-i18n="rp-furn-mirror">Espelho</li>
+          </ul>
+        </div>
+        <div class="room-page-card">
+          <h3 data-i18n="rp-head-included">Incluído</h3>
+          <ul>
+            <li data-i18n="rp-inc-wifi">WIFI de alta velocidade</li>
+            <li data-i18n="rp-inc-bills">Despesas fixas (água, luz, gás)</li>
+            <li data-i18n="rp-inc-security">Segurança 24h com código pessoal</li>
+            <li data-i18n="rp-inc-cleaning">Limpeza das zonas comuns</li>
+            <li data-i18n="rp-inc-kitchen">Cozinha partilhada equipada</li>
+            <li data-i18n="rp-inc-study">Sala de estudo e convívio</li>
+          </ul>
+        </div>
+        <div class="room-page-card room-page-card--cta">
+          <p class="room-page-cta-label" data-i18n="rp-cta-label-room">Interessado neste quarto?</p>
+          <a href="index.html?room=conforto#contact" class="btn btn--primary btn--full" data-i18n="room-book">Reservar ↗</a>
+          <a href="index.html#rooms" class="btn btn--ghost btn--full" style="margin-top:0.6rem;" data-i18n="rp-btn-allrooms">Ver todos os quartos</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-giant"><span class="footer-giant-text">spatium</span></div>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <p data-i18n="footer-rights">© 2025 Spatium Residence · Covilhã, Portugal</p>
+          <p data-i18n="footer-tag">Residência Universitária · Qualidade · Conforto · Comunidade</p>
+        </div>
+        <div class="footer-center">
+          <a href="index.html#rooms" data-i18n="nav-rooms">Quartos</a>
+          <a href="index.html#about" data-i18n="nav-about">Sobre</a>
+          <a href="index.html#gallery" data-i18n="nav-gallery">Galeria</a>
+          <a href="index.html#contact" data-i18n="nav-contact">Contactos</a>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:geral@spatiumresidence.com">geral@spatiumresidence.com</a>
+          <a href="tel:+351962482044">+351 962 482 044</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

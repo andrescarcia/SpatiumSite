@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0c0c" />
+    <title>Estúdio Premium — Spatium Residence</title>
+    <meta name="description" content="Estúdio Premium da Spatium Residence: T0 40m² com cozinha equipada, WC privado e pátio exterior privado." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+
+    <nav id="main-nav">
+      <div class="nav-logo">Spatium</div>
+      <ul class="nav-links">
+        <li><a href="index.html#rooms" data-i18n="nav-rooms">Quartos</a></li>
+        <li><a href="index.html#about" data-i18n="nav-about">Sobre</a></li>
+        <li><a href="index.html#gallery" data-i18n="nav-gallery">Galeria</a></li>
+        <li><a href="index.html#contact" data-i18n="nav-contact">Contactos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="pt">PT</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="index.html?room=studio#contact" class="nav-cta" data-i18n="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <main class="room-page">
+      <section class="room-page-hero">
+        <div class="room-page-hero__content">
+          <p class="section-overline" data-i18n="rp-s-overline">— Estúdio Premium</p>
+          <h1 data-i18n="rp-s-title">Estúdio<br /><em class="accent">Premium</em></h1>
+          <p data-i18n="rp-s-desc">T0 totalmente autónomo com cozinha equipada, WC privado, sala, quarto e pátio exterior privado. Independência total dentro da residência.</p>
+          <div class="room-page-hero__actions">
+            <a href="index.html?room=studio#contact" class="btn btn--primary" data-i18n="room-book">Reservar ↗</a>
+            <a href="index.html#rooms" class="btn btn--ghost" data-i18n="rp-btn-back">← Todos os quartos</a>
+          </div>
+        </div>
+        <div class="room-page-hero__image">
+          <div class="room-gallery" aria-label="Galeria Estúdio Premium">
+            <div class="room-gallery__track">
+              <figure class="room-gallery__slide">
+                <img src="photos/CozinhaB1.JPG" alt="Estúdio cozinha" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/room5.png" alt="Estúdio interior" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/IMG_8446.JPG" alt="Estúdio detalhe" />
+              </figure>
+              <figure class="room-gallery__slide">
+                <img src="photos/IMG_6535.JPG" alt="Estúdio ambiente" />
+              </figure>
+            </div>
+            <button class="room-gallery__arrow room-gallery__arrow--prev" type="button" aria-label="Foto anterior">&#8249;</button>
+            <button class="room-gallery__arrow room-gallery__arrow--next" type="button" aria-label="Foto seguinte">&#8250;</button>
+            <div class="room-gallery__dots" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="room-page-details">
+        <div class="room-page-card">
+          <h3 data-i18n="rp-head-features">Características</h3>
+          <ul>
+            <li data-i18n="rp-s-feat1">Área — 40m²</li>
+            <li data-i18n="rp-s-feat2">Cozinha equipada</li>
+            <li data-i18n="rp-feat-wc">WC privado</li>
+            <li data-i18n="rp-s-feat4">Sala</li>
+            <li data-i18n="rp-s-feat5">Quarto</li>
+            <li data-i18n="rp-s-feat6">Pátio privativo exterior</li>
+          </ul>
+        </div>
+        <div class="room-page-card">
+          <h3 data-i18n="rp-head-furniture">Mobília</h3>
+          <ul>
+            <li data-i18n="rp-s-furn1">Cama King Size</li>
+            <li data-i18n="rp-furn-tv">Mesa de televisão</li>
+            <li data-i18n="rp-furn-desk">Secretária</li>
+            <li data-i18n="rp-furn-wardrobe">Roupeiro</li>
+            <li data-i18n="rp-s-furn5">Sofá</li>
+            <li data-i18n="rp-s-furn6">Bancada para refeições</li>
+            <li data-i18n="rp-furn-bathcab">Móvel de casa de banho</li>
+          </ul>
+        </div>
+        <div class="room-page-card">
+          <h3 data-i18n="rp-s-head-kitchen">Cozinha equipada com</h3>
+          <ul>
+            <li data-i18n="rp-s-kit1">Frigorifico</li>
+            <li data-i18n="rp-s-kit2">Fogão</li>
+            <li data-i18n="rp-s-kit3">Forno</li>
+            <li data-i18n="rp-s-kit4">Microondas</li>
+            <li data-i18n="rp-inc-bills">Despesas fixas (água, luz, gás)</li>
+            <li data-i18n="rp-inc-wifi">WIFI de alta velocidade</li>
+          </ul>
+        </div>
+        <div class="room-page-card room-page-card--cta">
+          <p class="room-page-cta-label" data-i18n="rp-cta-label-studio">Interessado neste estúdio?</p>
+          <a href="index.html?room=studio#contact" class="btn btn--primary btn--full" data-i18n="room-book">Reservar ↗</a>
+          <a href="index.html#rooms" class="btn btn--ghost btn--full" style="margin-top:0.6rem;" data-i18n="rp-btn-allrooms">Ver todos os quartos</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-giant"><span class="footer-giant-text">spatium</span></div>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <p data-i18n="footer-rights">© 2025 Spatium Residence · Covilhã, Portugal</p>
+          <p data-i18n="footer-tag">Residência Universitária · Qualidade · Conforto · Comunidade</p>
+        </div>
+        <div class="footer-center">
+          <a href="index.html#rooms" data-i18n="nav-rooms">Quartos</a>
+          <a href="index.html#about" data-i18n="nav-about">Sobre</a>
+          <a href="index.html#gallery" data-i18n="nav-gallery">Galeria</a>
+          <a href="index.html#contact" data-i18n="nav-contact">Contactos</a>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:geral@spatiumresidence.com">geral@spatiumresidence.com</a>
+          <a href="tel:+351962482044">+351 962 482 044</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

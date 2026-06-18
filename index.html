@@ -1,525 +1,768 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0c0c0c" />
+    <title>Spatium — Residência Universitária · Covilhã</title>
+    <meta
+      name="description"
+      content="Spatium Residence — Quartos modernos e estúdios para estudantes universitários em Covilhã, Portugal. Conforto, privacidade e comunidade a minutos da UBI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0c0c0c" />
-  <title>Spatium — Residência Universitária · Covilhã</title>
-  <meta name="description"
-    content="Spatium Residence — Quartos modernos e estúdios para estudantes universitários em Covilhã, Portugal. Conforto, privacidade e comunidade a minutos da UBI." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="index.css" />
-</head>
+  <body>
+    <!-- NAV -->
+    <nav id="main-nav">
+      <div class="nav-logo">Spatium</div>
+      <ul class="nav-links">
+        <li><a href="#rooms" data-i18n="nav-rooms">Quartos</a></li>
+        <li><a href="#about" data-i18n="nav-about">Sobre</a></li>
+        <li><a href="#gallery" data-i18n="nav-gallery">Galeria</a></li>
+        <li><a href="#contact" data-i18n="nav-contact">Contactos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="pt">PT</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <a href="#contact" class="nav-cta" data-i18n="nav-cta">Reservar</a>
+      </div>
+      <button class="nav-burger" id="nav-burger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </nav>
 
-<body>
-
-  <!-- NAV -->
-  <nav id="main-nav">
-    <div class="nav-logo">Spatium</div>
-    <ul class="nav-links">
-      <li><a href="#rooms" data-i18n="nav-rooms">Quartos</a></li>
-      <li><a href="#about" data-i18n="nav-about">Sobre</a></li>
-      <li><a href="#gallery" data-i18n="nav-gallery">Galeria</a></li>
-      <li><a href="#contact" data-i18n="nav-contact">Contactos</a></li>
-    </ul>
-    <div class="nav-actions">
-      <div class="lang-switch">
-        <button class="lang-btn active" data-lang="pt">PT</button>
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li>
+          <a href="#rooms" class="mobile-link" data-i18n="nav-rooms">Quartos</a>
+        </li>
+        <li>
+          <a href="#about" class="mobile-link" data-i18n="nav-about">Sobre</a>
+        </li>
+        <li>
+          <a href="#gallery" class="mobile-link" data-i18n="nav-gallery"
+            >Galeria</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="mobile-link" data-i18n="nav-contact"
+            >Contactos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="mobile-link mobile-link--cta"
+            data-i18n="nav-cta"
+            >Reservar</a
+          >
+        </li>
+      </ul>
+      <div class="mobile-lang-switch">
+        <button class="mobile-lang-btn active" data-lang="pt">PT</button>
         <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <a href="#contact" class="nav-cta" data-i18n="nav-cta">Reservar</a>
-    </div>
-    <button class="nav-burger" id="nav-burger" aria-label="Menu">
-      <span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
-    <ul>
-      <li><a href="#rooms" class="mobile-link" data-i18n="nav-rooms">Quartos</a></li>
-      <li><a href="#about" class="mobile-link" data-i18n="nav-about">Sobre</a></li>
-      <li><a href="#gallery" class="mobile-link" data-i18n="nav-gallery">Galeria</a></li>
-      <li><a href="#contact" class="mobile-link" data-i18n="nav-contact">Contactos</a></li>
-      <li><a href="#contact" class="mobile-link mobile-link--cta" data-i18n="nav-cta">Reservar</a></li>
-    </ul>
-    <div class="mobile-lang-switch">
-      <button class="mobile-lang-btn active" data-lang="pt">PT</button>
-      <span class="lang-sep">|</span>
-      <button class="mobile-lang-btn" data-lang="en">EN</button>
-    </div>
-  </div>
-
-  <!-- HERO — Layered Effect -->
-  <section id="hero">
-
-    <!-- Layer 1: Giant brand text BEHIND the building -->
-    <div class="hero-brand">
-      <span class="hero-brand-text" id="hero-brand">spatium</span>
-    </div>
-
-    <!-- Layer 2: Building cutout — right side, in front of text -->
-    <div class="hero-building" id="hero-building-wrap">
-      <picture>
-        <source media="(max-width: 768px)" srcset="photos/fachadaMobile.png" />
-        <img src="photos/fachadaNoFondo.png" alt="Spatium Residence" id="hero-building-img" />
-      </picture>
-    </div>
-
-    <!-- Layer 3: Bottom gradient fade -->
-    <div class="hero-bottom-fade"></div>
-
-    <!-- Layer 4a: Top corner labels -->
-    <div class="hero-top-info">
-      <div class="hero-top-label">
-
-      </div>
-      <div class="hero-top-label" style="text-align:right;">
+        <button class="mobile-lang-btn" data-lang="en">EN</button>
       </div>
     </div>
 
-    <!-- Layer 4b: Content zone — left side, clear of building -->
-    <div class="hero-content-zone">
-      <div class="hero-content">
-        <div class="hero-tag" data-i18n="hero-tag">
-          <span class="tag-dot"></span>Residência Universitária · Covilhã
-        </div>
-        <h1 class="hero-headline" data-i18n="hero-head">
-          O teu espaço.<br />
-          A tua liberdade.
-        </h1>
-        <p class="hero-sub" data-i18n="hero-sub">Quartos e estúdios equipados, a minutos da UBI.</p>
-        <div class="hero-actions">
-          <a href="#rooms" class="btn btn--primary" data-i18n="hero-btn1">Ver Quartos</a>
-          <a href="#contact" class="btn btn--ghost" data-i18n="hero-btn2">Fala Connosco ↗</a>
+    <!-- HERO — Layered Effect -->
+    <section id="hero">
+      <!-- Layer 1: Giant brand text BEHIND the building -->
+      <div class="hero-brand">
+        <span class="hero-brand-text" id="hero-brand">spatium</span>
+      </div>
+
+      <!-- Layer 2: Building cutout — right side, in front of text -->
+      <div class="hero-building" id="hero-building-wrap">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="photos/fachadaMobile.png"
+          />
+          <img
+            src="photos/fachadaNoFondo.png"
+            alt="Spatium Residence"
+            id="hero-building-img"
+          />
+        </picture>
+      </div>
+
+      <!-- Layer 3: Bottom gradient fade -->
+      <div class="hero-bottom-fade"></div>
+
+      <!-- Layer 4a: Top corner labels -->
+      <div class="hero-top-info">
+        <div class="hero-top-label"></div>
+        <div class="hero-top-label" style="text-align: right"></div>
+      </div>
+
+      <!-- Layer 4b: Content zone — left side, clear of building -->
+      <div class="hero-content-zone">
+        <div class="hero-content">
+          <div class="hero-tag" data-i18n="hero-tag">
+            <span class="tag-dot"></span>Residência Universitária · Covilhã
+          </div>
+          <h1 class="hero-headline" data-i18n="hero-head">
+            O teu espaço.<br />
+            A tua liberdade.
+          </h1>
+          <p class="hero-sub" data-i18n="hero-sub">
+            Quartos e estúdios equipados, a minutos da UBI.
+          </p>
+          <div class="hero-actions">
+            <a href="#rooms" class="btn btn--primary" data-i18n="hero-btn1"
+              >Ver Quartos</a
+            >
+            <a href="#contact" class="btn btn--ghost" data-i18n="hero-btn2"
+              >Fala Connosco ↗</a
+            >
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Layer 5: Stats bar — full width at absolute bottom -->
-    <div class="hero-stats">
-      <div class="stat-item">
-        <span class="stat-num">3</span>
-        <span class="stat-label" data-i18n="stat-typ">Tipologias</span>
+      <!-- Layer 5: Stats bar — full width at absolute bottom -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">3</span>
+          <span class="stat-label" data-i18n="stat-typ">Tipologias</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">2025</span>
+          <span class="stat-label" data-i18n="stat-inaug">Inauguração</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">UBI</span>
+          <span class="stat-label" data-i18n="stat-dist">5 min a pé</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">40m²</span>
+          <span class="stat-label" data-i18n="stat-size">Maior Estúdio</span>
+        </div>
       </div>
-      <div class="stat-item">
-        <span class="stat-num">2025</span>
-        <span class="stat-label" data-i18n="stat-inaug">Inauguração</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">UBI</span>
-        <span class="stat-label" data-i18n="stat-dist">5 min a pé</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-num">40m²</span>
-        <span class="stat-label" data-i18n="stat-size">Maior Estúdio</span>
-      </div>
-    </div>
+    </section>
 
-  </section>
+    <!-- INTRO EDITORIAL -->
+    <section id="intro">
+      <div class="intro-grid">
+        <div class="intro-left">
+          <p class="section-overline" data-i18n="intro-over">— Sobre nós</p>
+          <h2 class="intro-headline" data-i18n="intro-head">
+            Qualidade.<br />
+            <em class="accent">Conforto.</em><br />
+            Comunidade.
+          </h2>
+        </div>
+        <div class="intro-right">
+          <p class="intro-body" data-i18n="intro-body">
+            A Spatium Residence nasceu da vontade de oferecer aos estudantes
+            universitários um lar moderno, funcional e acolhedor. Cada espaço
+            foi pensado ao detalhe — desde a ergonomia do quarto de trabalho até
+            ao pátio privativo onde podes desligar.
+          </p>
+          <div class="intro-meta-grid">
+            <div class="intro-meta-item">
+              <span class="meta-label" data-i18n="meta-loc">Localização</span>
+              <span class="meta-value" data-i18n="meta-loc-val"
+                >Covilhã, Portugal</span
+              >
+            </div>
+            <div class="intro-meta-item">
+              <span class="meta-label" data-i18n="meta-type">Tipo</span>
+              <span class="meta-value" data-i18n="meta-type-val"
+                >Residência Universitária</span
+              >
+            </div>
+            <div class="intro-meta-item">
+              <span class="meta-label" data-i18n="meta-avail"
+                >Disponibilidade</span
+              >
+              <span class="meta-value accent-text">2025 / 2026</span>
+            </div>
+            <div class="intro-meta-item">
+              <span class="meta-label" data-i18n="meta-rooms">Quartos</span>
+              <span class="meta-value" data-i18n="meta-rooms-val"
+                >Conforto · Deluxe · Estúdio</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="intro-full-img">
+        <img src="photos/jardim.png" alt="Jardim Spatium" />
+        <div class="intro-img-caption" data-i18n="intro-caption">
+          Jardim privativo da residência
+        </div>
+      </div>
+    </section>
 
-
-  <!-- INTRO EDITORIAL -->
-  <section id="intro">
-    <div class="intro-grid">
-      <div class="intro-left">
-        <p class="section-overline" data-i18n="intro-over">— Sobre nós</p>
-        <h2 class="intro-headline" data-i18n="intro-head">
-          Qualidade.<br />
-          <em class="accent">Conforto.</em><br />
-          Comunidade.
+    <!-- ROOMS -->
+    <section id="rooms">
+      <div class="rooms-header">
+        <p class="section-overline" data-i18n="rooms-over">Os nossos espaços</p>
+        <h2 class="section-title" data-i18n="rooms-head">
+          Encontra o teu<br /><em class="accent">quarto ideal</em>
         </h2>
       </div>
-      <div class="intro-right">
-        <p class="intro-body" data-i18n="intro-body">
-          A Spatium Residence nasceu da vontade de oferecer aos estudantes universitários um lar moderno, funcional e
-          acolhedor. Cada espaço foi pensado ao detalhe — desde a ergonomia do quarto de trabalho até ao pátio privativo
-          onde podes desligar.
+
+      <!-- ROOM GRID -->
+      <div class="rooms-grid">
+        <!-- ROOM 1 — CONFORTO -->
+        <article class="room-card" id="room-conforto">
+          <div class="room-card__img-wrap">
+            <img
+              src="photos/room1.png"
+              alt="Quarto Conforto"
+              class="room-card__img"
+            />
+            <div class="room-card__badge" data-i18n="room1-badge">Conforto</div>
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__meta">
+              <span class="room-meta-item"
+                ><span class="meta-icon">⬛</span>15 m²</span
+              >
+              <span class="room-meta-item" data-i18n="room1-bed"
+                ><span class="meta-icon">🛏</span>Cama 2x1m</span
+              >
+              <span class="room-meta-item" data-i18n="room1-wc"
+                ><span class="meta-icon">🚿</span>WC Privado</span
+              >
+              <span class="room-meta-item" data-i18n="room1-patio"
+                ><span class="meta-icon">🌿</span>Pátio</span
+              >
+            </div>
+            <h3 class="room-card__title" data-i18n="room1-title">
+              Quarto Conforto
+            </h3>
+            <p class="room-card__desc" data-i18n="room1-desc">
+              Quarto totalmente mobilado com WC privado, pátio privativo e
+              acesso às áreas comuns. Funcionalidade e conforto em cada detalhe.
+            </p>
+            <div class="room-card__footer">
+              <span class="room-card__price" data-i18n="room-price"
+                >Consultar preço</span
+              >
+              <div class="room-card__actions">
+                <a
+                  href="room-conforto.html"
+                  class="room-card__cta room-card__cta--view"
+                  data-i18n="room-view"
+                  >Ver quarto</a
+                >
+                <a
+                  href="#contact"
+                  class="room-card__cta room-card__cta--book"
+                  data-room="conforto"
+                  data-i18n="room-book"
+                  >Reservar ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROOM 2 — DELUXE -->
+        <article class="room-card room-card--featured" id="room-deluxe">
+          <div class="room-card__img-wrap">
+            <img
+              src="photos/room2.png"
+              alt="Quarto Deluxe"
+              class="room-card__img"
+            />
+            <div
+              class="room-card__badge room-card__badge--accent"
+              data-i18n="room2-badge"
+            >
+              Deluxe
+            </div>
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__meta">
+              <span class="room-meta-item"
+                ><span class="meta-icon">⬛</span>18 m²</span
+              >
+              <span class="room-meta-item" data-i18n="room2-bed"
+                ><span class="meta-icon">🛏</span>Cama King</span
+              >
+              <span class="room-meta-item" data-i18n="room1-wc"
+                ><span class="meta-icon">🚿</span>WC Privado</span
+              >
+              <span class="room-meta-item" data-i18n="room2-view"
+                ><span class="meta-icon">☀️</span>Vista jardim</span
+              >
+            </div>
+            <h3 class="room-card__title" data-i18n="room2-title">
+              Quarto Deluxe
+            </h3>
+            <p class="room-card__desc" data-i18n="room2-desc">
+              Espaçoso e luminoso, com acabamentos premium, WC privado e uma
+              zona de leitura. Mais espaço, mais luz, mais conforto.
+            </p>
+            <div class="room-card__footer">
+              <span class="room-card__price" data-i18n="room-price"
+                >Consultar preço</span
+              >
+              <div class="room-card__actions">
+                <a
+                  href="room-deluxe.html"
+                  class="room-card__cta room-card__cta--view"
+                  data-i18n="room-view"
+                  >Ver quarto</a
+                >
+                <a
+                  href="#contact"
+                  class="room-card__cta room-card__cta--book"
+                  data-room="deluxe"
+                  data-i18n="room-book"
+                  >Reservar ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- ROOM 3 — ESTÚDIO -->
+        <article class="room-card" id="room-studio">
+          <div class="room-card__img-wrap">
+            <img
+              src="photos/CozinhaB1.JPG"
+              alt="Estúdio Premium"
+              class="room-card__img"
+            />
+            <div class="room-card__badge" data-i18n="room3-badge">Estúdio</div>
+          </div>
+          <div class="room-card__body">
+            <div class="room-card__meta">
+              <span class="room-meta-item"
+                ><span class="meta-icon">⬛</span>40 m²</span
+              >
+              <span class="room-meta-item" data-i18n="room3-kitchen"
+                ><span class="meta-icon">🍳</span>Cozinha</span
+              >
+              <span class="room-meta-item" data-i18n="room1-wc"
+                ><span class="meta-icon">🚿</span>WC Privado</span
+              >
+              <span class="room-meta-item" data-i18n="room3-patio"
+                ><span class="meta-icon">🌿</span>Pátio privado</span
+              >
+            </div>
+            <h3 class="room-card__title" data-i18n="room3-title">
+              Estúdio Premium
+            </h3>
+            <p class="room-card__desc" data-i18n="room3-desc">
+              T0 totalmente autónomo com cozinha equipada, WC privado e pátio
+              exterior. Independência total dentro da residência.
+            </p>
+            <div class="room-card__footer">
+              <span class="room-card__price" data-i18n="room-price"
+                >Consultar preço</span
+              >
+              <div class="room-card__actions">
+                <a
+                  href="room-estudio.html"
+                  class="room-card__cta room-card__cta--view"
+                  data-i18n="room-view"
+                  >Ver quarto</a
+                >
+                <a
+                  href="#contact"
+                  class="room-card__cta room-card__cta--book"
+                  data-room="studio"
+                  data-i18n="room-book"
+                  >Reservar ↗</a
+                >
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ROOMS EXTRAS LIST -->
+      <div class="rooms-extras">
+        <p class="rooms-extras-title" data-i18n="extras-title">
+          Incluído em todos os quartos
         </p>
-        <div class="intro-meta-grid">
-          <div class="intro-meta-item">
-            <span class="meta-label" data-i18n="meta-loc">Localização</span>
-            <span class="meta-value" data-i18n="meta-loc-val">Covilhã, Portugal</span>
+        <div class="extras-grid">
+          <div class="extra-item" data-i18n="extra1">
+            <span class="extra-mark">↳</span>WIFI de alta velocidade
           </div>
-          <div class="intro-meta-item">
-            <span class="meta-label" data-i18n="meta-type">Tipo</span>
-            <span class="meta-value" data-i18n="meta-type-val">Residência Universitária</span>
+          <div class="extra-item" data-i18n="extra2">
+            <span class="extra-mark">↳</span>Limpeza semanal das zonas comuns
           </div>
-          <div class="intro-meta-item">
-            <span class="meta-label" data-i18n="meta-avail">Disponibilidade</span>
-            <span class="meta-value accent-text">2025 / 2026</span>
+          <div class="extra-item" data-i18n="extra3">
+            <span class="extra-mark">↳</span>Segurança 24h com código pessoal
           </div>
-          <div class="intro-meta-item">
-            <span class="meta-label" data-i18n="meta-rooms">Quartos</span>
-            <span class="meta-value" data-i18n="meta-rooms-val">Conforto · Deluxe · Estúdio</span>
+          <div class="extra-item" data-i18n="extra4">
+            <span class="extra-mark">↳</span>Despesas fixas (água, luz, gás)
+          </div>
+          <div class="extra-item" data-i18n="extra5">
+            <span class="extra-mark">↳</span>Cozinha partilhada equipada
+          </div>
+          <div class="extra-item" data-i18n="extra6">
+            <span class="extra-mark">↳</span>Sala de estudo e convívio
           </div>
         </div>
       </div>
-    </div>
-    <div class="intro-full-img">
-      <img src="photos/jardim.png" alt="Jardim Spatium" />
-      <div class="intro-img-caption" data-i18n="intro-caption">Jardim privativo da residência</div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ROOMS -->
-  <section id="rooms">
-    <div class="rooms-header">
-      <p class="section-overline" data-i18n="rooms-over">— Os nossos espaços</p>
-      <h2 class="section-title" data-i18n="rooms-head">Encontra o teu<br /><em class="accent">quarto ideal</em></h2>
-    </div>
-
-    <!-- ROOM GRID -->
-    <div class="rooms-grid">
-
-      <!-- ROOM 1 — CONFORTO -->
-      <article class="room-card" id="room-conforto">
-        <div class="room-card__img-wrap">
-          <img src="photos/room1.png" alt="Quarto Conforto" class="room-card__img" />
-          <div class="room-card__badge" data-i18n="room1-badge">Conforto</div>
+    <!-- EDITORIAL SPLIT — EXTERIOR -->
+    <section id="editorial-split">
+      <div class="split-grid">
+        <div class="split-img-col">
+          <img
+            src="photos/fachada2.png"
+            alt="Fachada Spatium"
+            class="split-img"
+          />
         </div>
-        <div class="room-card__body">
-          <div class="room-card__meta">
-            <span class="room-meta-item"><span class="meta-icon">⬛</span>15 m²</span>
-            <span class="room-meta-item" data-i18n="room1-bed"><span class="meta-icon">🛏</span>Cama 2x1m</span>
-            <span class="room-meta-item" data-i18n="room1-wc"><span class="meta-icon">🚿</span>WC Privado</span>
-            <span class="room-meta-item" data-i18n="room1-patio"><span class="meta-icon">🌿</span>Pátio</span>
-          </div>
-          <h3 class="room-card__title" data-i18n="room1-title">Quarto Conforto</h3>
-          <p class="room-card__desc" data-i18n="room1-desc">Quarto totalmente mobilado com WC privado, pátio privativo e acesso às áreas
-            comuns. Funcionalidade e conforto em cada detalhe.</p>
-          <div class="room-card__footer">
-            <span class="room-card__price" data-i18n="room-price">Consultar preço</span>
-            <a href="#contact" class="room-card__cta" data-i18n="room-book">Reservar ↗</a>
-          </div>
+        <div class="split-content-col">
+          <p class="section-overline" data-i18n="split-over">— A residência</p>
+          <h2 class="split-headline" data-i18n="split-head">
+            Viver perto<br />
+            da <em class="accent">UBI</em>.
+          </h2>
+          <p class="split-body" data-i18n="split-body">
+            A Spatium Residence situa-se a menos de 5 minutos a pé da
+            Universidade da Beira Interior, no coração de Covilhã. Um edifício
+            moderno, requalificado para os mais altos padrões de conforto e
+            sustentabilidade.
+          </p>
+          <ul class="split-list">
+            <li data-i18n="split-l1">
+              <span class="accent-text">01 —</span> A 5 min a pé da UBI
+            </li>
+            <li data-i18n="split-l2">
+              <span class="accent-text">02 —</span> Edifício totalmente
+              requalificado
+            </li>
+            <li data-i18n="split-l3">
+              <span class="accent-text">03 —</span> Comunidade de estudantes
+              activos
+            </li>
+            <li data-i18n="split-l4">
+              <span class="accent-text">04 —</span> Pátios e jardins privativos
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn--primary" data-i18n="split-btn"
+            >Saber mais ↗</a
+          >
         </div>
-      </article>
-
-      <!-- ROOM 2 — DELUXE -->
-      <article class="room-card room-card--featured" id="room-deluxe">
-        <div class="room-card__img-wrap">
-          <img src="photos/room2.png" alt="Quarto Deluxe" class="room-card__img" />
-          <div class="room-card__badge room-card__badge--accent" data-i18n="room2-badge">Deluxe</div>
-        </div>
-        <div class="room-card__body">
-          <div class="room-card__meta">
-            <span class="room-meta-item"><span class="meta-icon">⬛</span>18 m²</span>
-            <span class="room-meta-item" data-i18n="room2-bed"><span class="meta-icon">🛏</span>Cama King</span>
-            <span class="room-meta-item" data-i18n="room1-wc"><span class="meta-icon">🚿</span>WC Privado</span>
-            <span class="room-meta-item" data-i18n="room2-view"><span class="meta-icon">☀️</span>Vista jardim</span>
-          </div>
-          <h3 class="room-card__title" data-i18n="room2-title">Quarto Deluxe</h3>
-          <p class="room-card__desc" data-i18n="room2-desc">Espaçoso e luminoso, com acabamentos premium, WC privado e uma zona de leitura.
-            Mais espaço, mais luz, mais conforto.</p>
-          <div class="room-card__footer">
-            <span class="room-card__price" data-i18n="room-price">Consultar preço</span>
-            <a href="#contact" class="room-card__cta" data-i18n="room-book">Reservar ↗</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ROOM 3 — ESTÚDIO -->
-      <article class="room-card" id="room-studio">
-        <div class="room-card__img-wrap">
-          <img src="photos/CozinhaB1.JPG" alt="Estúdio Premium" class="room-card__img" />
-          <div class="room-card__badge" data-i18n="room3-badge">Estúdio</div>
-        </div>
-        <div class="room-card__body">
-          <div class="room-card__meta">
-            <span class="room-meta-item"><span class="meta-icon">⬛</span>40 m²</span>
-            <span class="room-meta-item" data-i18n="room3-kitchen"><span class="meta-icon">🍳</span>Cozinha</span>
-            <span class="room-meta-item" data-i18n="room1-wc"><span class="meta-icon">🚿</span>WC Privado</span>
-            <span class="room-meta-item" data-i18n="room3-patio"><span class="meta-icon">🌿</span>Pátio privado</span>
-          </div>
-          <h3 class="room-card__title" data-i18n="room3-title">Estúdio Premium</h3>
-          <p class="room-card__desc" data-i18n="room3-desc">T0 totalmente autónomo com cozinha equipada, WC privado e pátio exterior.
-            Independência total dentro da residência.</p>
-          <div class="room-card__footer">
-            <span class="room-card__price" data-i18n="room-price">Consultar preço</span>
-            <a href="#contact" class="room-card__cta" data-i18n="room-book">Reservar ↗</a>
-          </div>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- ROOMS EXTRAS LIST -->
-    <div class="rooms-extras">
-      <p class="rooms-extras-title" data-i18n="extras-title">Incluído em todos os quartos</p>
-      <div class="extras-grid">
-        <div class="extra-item" data-i18n="extra1"><span class="extra-mark">↳</span>WIFI de alta velocidade</div>
-        <div class="extra-item" data-i18n="extra2"><span class="extra-mark">↳</span>Limpeza semanal das zonas comuns</div>
-        <div class="extra-item" data-i18n="extra3"><span class="extra-mark">↳</span>Segurança 24h com código pessoal</div>
-        <div class="extra-item" data-i18n="extra4"><span class="extra-mark">↳</span>Despesas fixas (água, luz, gás)</div>
-        <div class="extra-item" data-i18n="extra5"><span class="extra-mark">↳</span>Cozinha partilhada equipada</div>
-        <div class="extra-item" data-i18n="extra6"><span class="extra-mark">↳</span>Sala de estudo e convívio</div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EDITORIAL SPLIT — EXTERIOR -->
-  <section id="editorial-split">
-    <div class="split-grid">
-      <div class="split-img-col">
-        <img src="photos/fachada2.png" alt="Fachada Spatium" class="split-img" />
-      </div>
-      <div class="split-content-col">
-        <p class="section-overline" data-i18n="split-over">— A residência</p>
-        <h2 class="split-headline" data-i18n="split-head">
-          Viver perto<br />
-          da <em class="accent">UBI</em>.
-        </h2>
-        <p class="split-body" data-i18n="split-body">
-          A Spatium Residence situa-se a menos de 5 minutos a pé da Universidade da Beira Interior, no coração de
-          Covilhã. Um edifício moderno, requalificado para os mais altos padrões de conforto e sustentabilidade.
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="gallery-header">
+        <p class="section-overline" data-i18n="gallery-over">
+          — A nossa galeria
         </p>
-        <ul class="split-list">
-          <li data-i18n="split-l1"><span class="accent-text">01 —</span> A 5 min a pé da UBI</li>
-          <li data-i18n="split-l2"><span class="accent-text">02 —</span> Edifício totalmente requalificado</li>
-          <li data-i18n="split-l3"><span class="accent-text">03 —</span> Comunidade de estudantes activos</li>
-          <li data-i18n="split-l4"><span class="accent-text">04 —</span> Pátios e jardins privativos</li>
-        </ul>
-        <a href="#contact" class="btn btn--primary" data-i18n="split-btn">Saber mais ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="gallery-header">
-      <p class="section-overline" data-i18n="gallery-over">— A nossa galeria</p>
-      <h2 class="section-title" data-i18n="gallery-head">Cada detalhe<br />foi <em class="accent">pensado</em></h2>
-    </div>
-
-    <div class="gallery-masonry">
-      <div class="gallery-col gallery-col--tall">
-        <div class="gallery-item g-tall">
-          <img src="photos/room3.png" alt="Quarto interior" />
-        </div>
-        <div class="gallery-item">
-          <img src="photos/mesaexterior.png" alt="Mesa exterior" />
-        </div>
-      </div>
-      <div class="gallery-col">
-        <div class="gallery-item">
-          <img src="photos/patioconforto.png" alt="Pátio Conforto" />
-        </div>
-        <div class="gallery-item">
-          <img src="photos/room4.png" alt="Quarto Deluxe interior" />
-        </div>
-        <div class="gallery-item">
-          <img src="photos/patiodeluxe.png" alt="Pátio Deluxe" />
-        </div>
-      </div>
-      <div class="gallery-col gallery-col--tall">
-        <div class="gallery-item">
-          <img src="photos/room5.png" alt="Estúdio" />
-        </div>
-        <div class="gallery-item g-tall">
-          <img src="photos/IMG_8446.JPG" alt="Interior moderno" />
-        </div>
-      </div>
-    </div>
-
-    <!-- MARQUEE STRIP -->
-    <div class="marquee-strip">
-      <div class="marquee-track" id="marquee-track">
-        <span data-i18n="mq-res">Residência Universitária</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c1">Quarto Conforto</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c2">Quarto Deluxe</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c3">Estúdio Premium</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-loc">Covilhã, Portugal</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-ubi">UBI · 5 minutos</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-res">Residência Universitária</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c1">Quarto Conforto</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c2">Quarto Deluxe</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-c3">Estúdio Premium</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-loc">Covilhã, Portugal</span>
-        <span class="accent-text">✦</span>
-        <span data-i18n="mq-ubi">UBI · 5 minutos</span>
-        <span class="accent-text">✦</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT / FEATURES -->
-  <section id="about">
-    <div class="about-grid">
-      <div class="about-left">
-        <p class="section-overline" data-i18n="about-over">— Porquê a Spatium</p>
-        <h2 class="about-headline" data-i18n="about-head">
-          Inovação e<br />
-          conforto,<br />
-          <em class="accent">desenhado para ti</em>.
+        <h2 class="section-title" data-i18n="gallery-head">
+          Cada detalhe<br />foi <em class="accent">pensado</em>
         </h2>
-        <div class="about-img-stack">
-          <img src="photos/IMG_6535.JPG" alt="Interior" />
-        </div>
       </div>
-      <div class="about-right">
-        <div class="features-table">
-          <div class="feature-row">
-            <div class="feature-num accent-text">01</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f1-t">Limpeza Diária</div>
-              <div class="feature-desc" data-i18n="f1-d">As zonas comuns são limpas e higienizadas diariamente.</div>
-            </div>
+
+      <div class="gallery-masonry">
+        <div class="gallery-col gallery-col--tall">
+          <div class="gallery-item g-tall">
+            <img src="photos/room3.png" alt="Quarto interior" />
           </div>
-          <div class="feature-row">
-            <div class="feature-num accent-text">02</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f2-t">Segurança 24h</div>
-              <div class="feature-desc" data-i18n="f2-d">Código pessoal e câmaras nas áreas comuns para a tua tranquilidade.</div>
-            </div>
+          <div class="gallery-item">
+            <img src="photos/mesaexterior.png" alt="Mesa exterior" />
           </div>
-          <div class="feature-row">
-            <div class="feature-num accent-text">03</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f3-t">WIFI de Alta Velocidade</div>
-              <div class="feature-desc" data-i18n="f3-d">Internet rápida e fiável em toda a residência.</div>
-            </div>
+        </div>
+        <div class="gallery-col">
+          <div class="gallery-item">
+            <img src="photos/patioconforto.png" alt="Pátio Conforto" />
           </div>
-          <div class="feature-row">
-            <div class="feature-num accent-text">04</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f4-t">Despesas Fixas</div>
-              <div class="feature-desc" data-i18n="f4-d">Água, luz e gás incluídos sem surpresas no final do mês.</div>
-            </div>
+          <div class="gallery-item">
+            <img src="photos/room4.png" alt="Quarto Deluxe interior" />
           </div>
-          <div class="feature-row">
-            <div class="feature-num accent-text">05</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f5-t">Cozinha Equipada</div>
-              <div class="feature-desc" data-i18n="f5-d">Estúdios com frigorífico, fogão, forno e microondas.</div>
-            </div>
+          <div class="gallery-item">
+            <img src="photos/patiodeluxe.png" alt="Pátio Deluxe" />
           </div>
-          <div class="feature-row">
-            <div class="feature-num accent-text">06</div>
-            <div class="feature-content">
-              <div class="feature-title" data-i18n="f6-t">Camas de Casal</div>
-              <div class="feature-desc" data-i18n="f6-d">Todos os quartos estão equipados com camas de casal confortáveis.</div>
-            </div>
+        </div>
+        <div class="gallery-col gallery-col--tall">
+          <div class="gallery-item">
+            <img src="photos/room5.png" alt="Estúdio" />
+          </div>
+          <div class="gallery-item g-tall">
+            <img src="photos/IMG_8446.JPG" alt="Interior moderno" />
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- BIG TEXT BREAK -->
-  <section id="big-text">
-    <div class="big-text-inner">
-      <p class="big-text-line" data-i18n="big1">Vive perto.</p>
-      <p class="big-text-line big-text-line--accent" data-i18n="big2">Estuda melhor.</p>
-    </div>
-    <div class="big-text-img">
-      <img src="photos/fachada1.png" alt="Spatium Exterior" />
-    </div>
-  </section>
+      <!-- MARQUEE STRIP -->
+      <div class="marquee-strip">
+        <div class="marquee-track" id="marquee-track">
+          <span data-i18n="mq-res">Residência Universitária</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c1">Quarto Conforto</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c2">Quarto Deluxe</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c3">Estúdio Premium</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-loc">Covilhã, Portugal</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-ubi">UBI · 5 minutos</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-res">Residência Universitária</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c1">Quarto Conforto</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c2">Quarto Deluxe</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-c3">Estúdio Premium</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-loc">Covilhã, Portugal</span>
+          <span class="accent-text">✦</span>
+          <span data-i18n="mq-ubi">UBI · 5 minutos</span>
+          <span class="accent-text">✦</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="contact-grid">
-      <div class="contact-left">
-        <p class="section-overline" data-i18n="contact-over">— Contacto</p>
-        <h2 class="contact-headline" data-i18n="contact-head">
-          Reserva o teu<br />
-          <em class="accent">espaço</em>.
-        </h2>
-        <p class="contact-body" data-i18n="contact-body">
-          Preenche o formulário ou contacta-nos directamente. Responderemos o mais brevemente possível com toda a
-          informação sobre disponibilidade e preços.
+    <!-- ABOUT / FEATURES -->
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="section-overline" data-i18n="about-over">
+            — Porquê a Spatium
+          </p>
+          <h2 class="about-headline" data-i18n="about-head">
+            Inovação e<br />
+            conforto,<br />
+            <em class="accent">desenhado para ti</em>.
+          </h2>
+          <div class="about-img-stack">
+            <img src="photos/IMG_6535.JPG" alt="Interior" />
+          </div>
+        </div>
+        <div class="about-right">
+          <div class="features-table">
+            <div class="feature-row">
+              <div class="feature-num accent-text">01</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f1-t">Limpeza Diária</div>
+                <div class="feature-desc" data-i18n="f1-d">
+                  As zonas comuns são limpas e higienizadas diariamente.
+                </div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-num accent-text">02</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f2-t">Segurança 24h</div>
+                <div class="feature-desc" data-i18n="f2-d">
+                  Código pessoal e câmaras nas áreas comuns para a tua
+                  tranquilidade.
+                </div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-num accent-text">03</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f3-t">
+                  WIFI de Alta Velocidade
+                </div>
+                <div class="feature-desc" data-i18n="f3-d">
+                  Internet rápida e fiável em toda a residência.
+                </div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-num accent-text">04</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f4-t">Despesas Fixas</div>
+                <div class="feature-desc" data-i18n="f4-d">
+                  Água, luz e gás incluídos sem surpresas no final do mês.
+                </div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-num accent-text">05</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f5-t">
+                  Cozinha Equipada
+                </div>
+                <div class="feature-desc" data-i18n="f5-d">
+                  Estúdios com frigorífico, fogão, forno e microondas.
+                </div>
+              </div>
+            </div>
+            <div class="feature-row">
+              <div class="feature-num accent-text">06</div>
+              <div class="feature-content">
+                <div class="feature-title" data-i18n="f6-t">Camas de Casal</div>
+                <div class="feature-desc" data-i18n="f6-d">
+                  Todos os quartos estão equipados com camas de casal
+                  confortáveis.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG TEXT BREAK -->
+    <section id="big-text">
+      <div class="big-text-inner">
+        <p class="big-text-line" data-i18n="big1">Vive perto.</p>
+        <p class="big-text-line big-text-line--accent" data-i18n="big2">
+          Estuda melhor.
         </p>
-        <div class="contact-info">
-          <div class="contact-info-item">
-            <span class="contact-info-label">Email</span>
-            <a href="mailto:info@spatium.pt" class="contact-info-value">info@spatium.pt</a>
-          </div>
-          <div class="contact-info-item">
-            <span class="contact-info-label">Telefone</span>
-            <a href="tel:+351000000000" class="contact-info-value">+351 000 000 000</a>
-          </div>
-          <div class="contact-info-item">
-            <span class="contact-info-label">Morada</span>
-            <span class="contact-info-value">Covilhã, Portugal</span>
+      </div>
+      <div class="big-text-img">
+        <img src="photos/fachada1.png" alt="Spatium Exterior" />
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="contact-grid">
+        <div class="contact-left">
+          <p class="section-overline" data-i18n="contact-over">— Contacto</p>
+          <h2 class="contact-headline" data-i18n="contact-head">
+            Reserva o teu<br />
+            <em class="accent">espaço</em>.
+          </h2>
+          <p class="contact-body" data-i18n="contact-body">
+            Preenche o formulário ou contacta-nos directamente. Responderemos o
+            mais brevemente possível com toda a informação sobre disponibilidade
+            e preços.
+          </p>
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <span class="contact-info-label">Email</span>
+              <a href="mailto:info@spatium.pt" class="contact-info-value"
+                >info@spatium.pt</a
+              >
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Telefone</span>
+              <a href="tel:+351000000000" class="contact-info-value"
+                >+351 000 000 000</a
+              >
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Morada</span>
+              <span class="contact-info-value">Covilhã, Portugal</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="contact-right">
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
+        <div class="contact-right">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name" data-i18n="lbl-name">Nome *</label>
+                <input
+                  type="text"
+                  id="form-name"
+                  name="name"
+                  placeholder="O teu nome"
+                  data-i18n-placeholder="ph-name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="form-email" data-i18n="lbl-email">Email *</label>
+                <input
+                  type="email"
+                  id="form-email"
+                  name="email"
+                  placeholder="email@exemplo.pt"
+                  data-i18n-placeholder="ph-email"
+                  required
+                />
+              </div>
+            </div>
             <div class="form-group">
-              <label for="form-name" data-i18n="lbl-name">Nome *</label>
-              <input type="text" id="form-name" name="name" placeholder="O teu nome" data-i18n-placeholder="ph-name" required />
+              <label for="form-room" data-i18n="lbl-room"
+                >Tipologia de interesse</label
+              >
+              <select id="form-room" name="room">
+                <option value="" data-i18n="opt-sel">
+                  Selecciona uma opção
+                </option>
+                <option value="conforto" data-i18n="opt-c">
+                  Quarto Conforto
+                </option>
+                <option value="deluxe" data-i18n="opt-d">Quarto Deluxe</option>
+                <option value="studio" data-i18n="opt-s">
+                  Estúdio Premium
+                </option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="form-email" data-i18n="lbl-email">Email *</label>
-              <input type="email" id="form-email" name="email" placeholder="email@exemplo.pt" data-i18n-placeholder="ph-email" required />
+              <label for="form-message" data-i18n="lbl-msg">Mensagem</label>
+              <textarea
+                id="form-message"
+                name="message"
+                rows="5"
+                placeholder="Deixa a tua mensagem..."
+                data-i18n-placeholder="ph-msg"
+              ></textarea>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="form-room" data-i18n="lbl-room">Tipologia de interesse</label>
-            <select id="form-room" name="room">
-              <option value="" data-i18n="opt-sel">Selecciona uma opção</option>
-              <option value="conforto" data-i18n="opt-c">Quarto Conforto</option>
-              <option value="deluxe" data-i18n="opt-d">Quarto Deluxe</option>
-              <option value="studio" data-i18n="opt-s">Estúdio Premium</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="form-message" data-i18n="lbl-msg">Mensagem</label>
-            <textarea id="form-message" name="message" rows="5" placeholder="Deixa a tua mensagem..." data-i18n-placeholder="ph-msg"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--full" id="form-submit" data-i18n="form-submit-txt">
-            Enviar Mensagem ↗
-          </button>
-          <p class="form-success" id="form-success" data-i18n="form-success">✓ Mensagem enviada! Entraremos em contacto em breve.</p>
-        </form>
+            <button
+              type="submit"
+              class="btn btn--primary btn--full"
+              id="form-submit"
+              data-i18n="form-submit-txt"
+            >
+              Enviar Mensagem ↗
+            </button>
+            <p class="form-success" id="form-success" data-i18n="form-success">
+              ✓ Mensagem enviada! Entraremos em contacto em breve.
+            </p>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer id="footer">
-    <div class="footer-giant">
-      <span class="footer-giant-text">spatium</span>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-left">
-        <p data-i18n="footer-rights">© 2025 Spatium Residence · Covilhã, Portugal</p>
-        <p data-i18n="footer-tag">Residência Universitária · Qualidade · Conforto · Comunidade</p>
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="footer-giant">
+        <span class="footer-giant-text">spatium</span>
       </div>
-      <div class="footer-center">
-        <a href="#rooms" data-i18n="nav-rooms">Quartos</a>
-        <a href="#about" data-i18n="nav-about">Sobre</a>
-        <a href="#gallery" data-i18n="nav-gallery">Galeria</a>
-        <a href="#contact" data-i18n="nav-contact">Contactos</a>
+      <div class="footer-bottom">
+        <div class="footer-left">
+          <p data-i18n="footer-rights">
+            © 2025 Spatium Residence · Covilhã, Portugal
+          </p>
+          <p data-i18n="footer-tag">
+            Residência Universitária · Qualidade · Conforto · Comunidade
+          </p>
+        </div>
+        <div class="footer-center">
+          <a href="#rooms" data-i18n="nav-rooms">Quartos</a>
+          <a href="#about" data-i18n="nav-about">Sobre</a>
+          <a href="#gallery" data-i18n="nav-gallery">Galeria</a>
+          <a href="#contact" data-i18n="nav-contact">Contactos</a>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:info@spatium.pt">info@spatium.pt</a>
+          <a href="tel:+351000000000">+351 000 000 000</a>
+        </div>
       </div>
-      <div class="footer-right">
-        <a href="mailto:info@spatium.pt">info@spatium.pt</a>
-        <a href="tel:+351000000000">+351 000 000 000</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="index.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="index.js"></script>
+  </body>
 </html>
