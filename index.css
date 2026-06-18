@@ -36,6 +36,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 body {
@@ -1861,7 +1862,7 @@ button {
 
   .hero-brand-text {
     font-size: 22vw;
-    /* Smaller so 'spatium' is fully visible on screen */
+    transform: translateY(0);
   }
 
   /* Building perfectly proportioned in the upper middle */
